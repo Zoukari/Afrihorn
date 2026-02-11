@@ -1,0 +1,35 @@
+.wrapper {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.btn {
+  padding: 0.35rem 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 2px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  background: var(--color-bg-soft);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  transform: scale(1.05);
+}
+
+.btn.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn:hover {
+    transform: none;
+  }
+}

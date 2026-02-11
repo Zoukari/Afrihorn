@@ -1,0 +1,123 @@
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  padding: 0.5rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.btn:hover .content {
+  transform: translateX(3rem);
+  opacity: 0;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--color-accent);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover .dot {
+  transform: scale(10.08);
+}
+
+.contentHover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: white;
+  transform: translateX(3rem);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.btn:hover .contentHover {
+  transform: translateX(-0.25rem);
+  opacity: 1;
+}
+
+.textHover {
+  white-space: nowrap;
+}
+
+.arrow {
+  flex-shrink: 0;
+}
+
+/* Variant: primary (filled) for Hero / CTA */
+.btnPrimary {
+  background: white;
+  border-color: white;
+  color: var(--color-hero-bg);
+}
+
+.btnPrimary .dot {
+  background: var(--color-hero-bg);
+}
+
+.btnPrimary .contentHover {
+  color: var(--color-hero-bg);
+}
+
+.btnPrimary:hover .contentHover {
+  color: white;
+}
+
+.btnPrimary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-accent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.btnPrimary:hover::before {
+  opacity: 1;
+}
+
+/* Variant: secondary outline */
+.btnSecondary {
+  background: transparent;
+  color: white;
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.btnSecondary .dot {
+  background: white;
+}
+
+.btnSecondary .contentHover {
+  color: var(--color-hero-bg);
+}
+
+.btnSecondary:hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.95);
+  z-index: -1;
+}

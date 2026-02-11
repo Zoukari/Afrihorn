@@ -1,0 +1,292 @@
+{
+  "nav": {
+    "about": "À propos",
+    "services": "Services",
+    "locations": "Où nous opérons",
+    "contact": "Contact"
+  },
+  "hero": {
+    "tagline": "Solutions Maritimes Premium",
+    "subtitle": "Excellence en opérations portuaires, équipements marins et solutions logistiques en Afrique de l'Est et dans le Golfe Arabique",
+    "cta": "Découvrir Nos Services"
+  },
+  "intro": {
+    "title": "À propos d'Afrihorn",
+    "p1": "Afrihorn est une société basée aux Émirats arabes unis, spécialisée dans la fourniture de pièces et équipements maritimes, équipements portuaires, machines d'usine et de travail des métaux, consommables, outils et équipements roulants (pièces pour locomotives, wagons, etc.).",
+    "p2": "Nous livrons tous types et marques de machines, pièces détachées, outils et équipements pour différents marchés, partout dans le monde. Nous nous concentrons principalement sur le marché est-africain où nous avons fourni nos pièces et équipements à de nombreux ports et clients africains. Nos clients sont principalement les autorités portuaires, marines, garde-côtes et sociétés ferroviaires.",
+    "p3": "Nos relations solides et durables nous donnent un pouvoir d'achat pour vous garantir l'offre la plus compétitive. Grâce à nos nombreux fournisseurs, constructeurs et partenaires, nous vous connectons à un vaste marché pour obtenir ce dont vous avez besoin, au moment où vous en avez besoin.",
+    "p4": "Grâce à notre chaîne d'approvisionnement éprouvée et à notre réseau logistique de partenaires, Afrihorn offre une livraison fiable, efficace et économique de commandes complètes dans un délai court.",
+    "p5": "Notre équipe est prête à vous accompagner pour la fourniture de tout type d'équipement, pièces détachées et machines pour vos ports, navires, usines et locomotives !",
+    "slide1Author": "L'Entreprise",
+    "slide1Role": "Basée aux EAU",
+    "slide2Author": "Portée Mondiale",
+    "slide2Role": "Livraison Mondiale",
+    "slide3Author": "Puissance Stratégique",
+    "slide3Role": "Partenariats",
+    "slide4Author": "Réseau Logistique",
+    "slide4Role": "Rapide & Fiable",
+    "company": "Afrihorn"
+  },
+  "sections": {
+    "1": {
+      "title": "Opérations portuaires",
+      "description": "Nous offrons des services complets d'opérations portuaires : accostage, coordination du pilotage, assistance de remorqueurs et manutention du fret. Notre équipe assure des mouvements de navires sûrs, efficaces et ponctuels dans le respect des normes portuaires et de sécurité internationales.",
+      "bullets": [
+        "Gestion de l'accostage et des ancrages – Planification et attribution des postes à quai et des mouillages pour des arrivées, séjours et départs sûrs et efficaces.",
+        "Pilotage, remorquage et opérations d'amarrage – Fourniture et coordination des pilotes, remorqueurs et équipes d'amarrage pour manœuvrer les navires dans les limites du port.",
+        "Coordination VTS – Surveillance et gestion des mouvements des navires par radar, AIS et systèmes de communication pour la sécurité de la navigation.",
+        "Manutention du fret et opérations terminal – Chargement, déchargement et manutention de conteneurs, vrac, divers et fret de projet.",
+        "Conteneurs, vrac et fret général – Solutions de manutention adaptées à chaque type de fret, garantissant efficacité et intégrité.",
+        "Sécurité portuaire (conformité ISPS) – Mise en œuvre de mesures de sécurité, contrôle d'accès et surveillance conformément au code ISPS.",
+        "Maintenance des installations portuaires – Inspection, réparation et entretien des quais, jetées, parcs et infrastructures portuaires."
+      ]
+    },
+    "2": {
+      "title": "Services maritimes",
+      "description": "Nos services maritimes accompagnent les navires pendant leur escale : bunkering, eau douce, réception des déchets, approvisionnement et réponse d'urgence. Nous assurons des services fiables qui maintiennent les navires opérationnels et conformes à MARPOL.",
+      "bullets": [
+        "Bunkering et eau douce – Fourniture de carburant marin et d'eau potable aux navires conformément aux normes internationales.",
+        "Approvisionnement et fournitures maritimes – Provisions, pièces détachées, outils et consommables pour l'exploitation des navires.",
+        "Réception des déchets et services MARPOL – Collecte et élimination des déchets des navires conformément à MARPOL.",
+        "Gestion des eaux de ballast – Aide au traitement, conformité et documentation des eaux de ballast.",
+        "Lutte contre l'incendie et urgence marine – Préparation et intervention en cas d'incendie, collision ou urgence marine.",
+        "Réponse aux déversements d'hydrocarbures – Déploiement de barrages, écumeurs et équipements de nettoyage pour protéger l'environnement marin."
+      ]
+    },
+    "3": {
+      "title": "Opérations de chantier naval",
+      "description": "Nos opérations de chantier naval couvrent les réparations à flot et en cale sèche, la maintenance courante et les travaux d'urgence. Nous assurons les réparations de coque, mécaniques, électriques et structurelles pour limiter l'immobilisation et garantir la navigabilité.",
+      "bullets": [
+        "Réparation et maintenance des navires – Réparations courantes et d'urgence à flot ou en cale sèche pour maintenir la navigabilité.",
+        "Opérations de mise en cale et sortie – Opérations contrôlées pour inspection de coque, maintenance et réparations majeures.",
+        "Nettoyage, sablage et peinture de coque – Décapage des salissures et application de revêtements protecteurs pour les performances.",
+        "Travaux d'acier et réparations structurelles – Réparation ou remplacement de structures de coque, ponts et membrures selon méthodes approuvées.",
+        "Travaux mécaniques, électriques et automatisation – Maintenance et réparation des moteurs, générateurs, systèmes électriques et équipements d'automatisation.",
+        "Réparation d'hélice, gouvernail et arbre – Inspection, alignement et réparation des organes de propulsion et de direction."
+      ]
+    },
+    "4": {
+      "title": "Soutien à l'accostage et à l'amarrage",
+      "description": "Nous fournissons et entretenons les systèmes d'accostage et d'amarrage : défenses, bollards, équipements d'amarrage et solutions de guidage. Ces systèmes renforcent la sécurité et la précision lors des opérations d'accostage.",
+      "bullets": [
+        "Systèmes d'aide à l'accostage et de guidage – Installation et maintenance de systèmes d'assistance à l'accostage.",
+        "Inspection et maintenance des défenses et bollards – Vérification que les équipements sont sûrs, fonctionnels et capables de supporter les charges prévues.",
+        "Installation et essai des équipements d'amarrage – Fourniture, pose et essais de charge des amarres, crochets et accessoires.",
+        "Essais de charge des grues et appareils de levage – Certification et essais des équipements de levage pour la sécurité opérationnelle."
+      ]
+    },
+    "5": {
+      "title": "Ingénierie et fabrication",
+      "description": "Nos services d'ingénierie et de fabrication comprennent les travaux d'acier marin, la fabrication de tuyauteries, l'usinage et les solutions de retrofit. Tous les travaux utilisent des matériaux de qualité marine et des pratiques approuvées.",
+      "bullets": [
+        "Fabrication d'acier marin – Fabrication de composants en acier qualité marine pour navires et infrastructures portuaires.",
+        "Fabrication et pose de tuyauteries – Fabrication et installation de réseaux pour carburant, ballast et utilités.",
+        "Usinage et services d'atelier – Tournage, fraisage et réparations en atelier de précision.",
+        "Travaux de retrofit et conversion – Modification des navires ou équipements portuaires pour de nouvelles exigences opérationnelles ou réglementaires."
+      ]
+    },
+    "6": {
+      "title": "Sécurité, conformité et inspection",
+      "description": "Nous accompagnons les navires et installations portuaires avec des audits de sécurité, inspections et services de conformité (IMO, SOLAS, MARPOL). Notre priorité : sécurité opérationnelle, conformité réglementaire et réduction des risques.",
+      "bullets": [
+        "Travaux de réparation approuvés par les sociétés de classification – Exécution des réparations conformément aux exigences des sociétés de classification.",
+        "Services de conformité IMO, SOLAS, MARPOL – Garantir que navires et installations respectent les réglementations maritimes internationales.",
+        "Audits et inspections de sécurité – Évaluation de la sécurité opérationnelle, des procédures et des normes de conformité.",
+        "Contrôles non destructifs (CND) – Techniques d'inspection (ultrasons, magnétique, radiographie) sans endommager les structures."
+      ]
+    },
+    "7": {
+      "title": "Équipements portuaires et de chantier naval",
+      "description": "Nous fournissons une large gamme d'équipements portuaires et de chantier naval : levage, machines de manutention, outils marins et aides à la navigation. Nos solutions sont adaptées aux besoins opérationnels et environnementaux.",
+      "bullets": [
+        "Équipements de manutention portuaire – Grues, reach stackers, chariots et équipements de terminal.",
+        "Outils et machines de chantier naval – Outils et machines spécialisés pour la réparation et la maintenance des navires.",
+        "Grues, chariots et équipements de levage – Livraison, installation et maintenance des équipements de levage et de manutention.",
+        "Équipements de navigation et de guidage – Fourniture et maintenance de bouées, balises, AIS et systèmes de guidage à l'accostage."
+      ]
+    },
+    "8": {
+      "title": "Projet et support technique",
+      "description": "Nous offrons gestion de projet, supervision technique et solutions clé en main pour les projets portuaires et de chantier naval. De la planification à l'exécution, nous assurons qualité, efficacité et délais.",
+      "bullets": [
+        "Gestion de projet pour travaux de réparation – Planification, coordination et exécution des projets de réparation navale et portuaire.",
+        "Supervision technique et conseil – Encadrement expert pour la qualité, la sécurité et la conformité.",
+        "Approvisionnement en pièces détachées et logistique – Achat et livraison de pièces maritimes et industrielles.",
+        "Solutions clé en main port et chantier naval – Solutions de bout en bout : conception, fourniture, installation et mise en service."
+      ]
+    },
+    "9": {
+      "title": "Logistique et chaîne d'approvisionnement",
+      "description": "Nous proposons des solutions logistiques de bout en bout pour les opérations maritimes et portuaires : transport de fret, dédouanement, entreposage et gestion de la chaîne d'approvisionnement. Nos services garantissent une livraison fluide, dans les délais et à moindre coût.",
+      "bullets": [
+        "Transport de fret et routier – Mouvement efficace des marchandises entre ports, entrepôts et destinations.",
+        "Dédouanement et documentation – Gestion des documents d'import/export et conformité réglementaire.",
+        "Entreposage et gestion des stocks – Stockage sécurisé, manutention et contrôle des inventaires.",
+        "Coordination du transport intermodal – Mouvement fluide du fret par mer, rail et route.",
+        "Planification et optimisation de la chaîne d'approvisionnement – Logistique rationalisée pour une livraison économique et dans les délais."
+      ]
+    },
+    "10": {
+      "title": "Navire de support offshore",
+      "description": "Nous offrons des services complets de support offshore : transfert d'équipage, opérations de navires de ravitaillement, manutention d'équipements sous-marins et logistique de plateforme. Nos solutions assurent des opérations offshore sûres, efficaces et fiables.",
+      "bullets": [
+        "Opérations de navires de transfert d'équipage – Transport sûr et fiable du personnel vers les plateformes offshore.",
+        "Opérations de navires de ravitaillement offshore – Livraison d'équipements, matériaux et provisions sur les sites offshore.",
+        "Manutention d'équipements sous-marins – Manutention et déploiement d'outils et machines sous-marines.",
+        "Logistique de plateforme et manutention de matériel – Support coordonné pour les opérations et la maintenance offshore.",
+        "Sécurité offshore et réponse d'urgence – Préparation à la gestion des urgences et à la sécurité des équipages offshore."
+      ]
+    },
+    "11": {
+      "title": "Commerce et agences",
+      "description": "Nous offrons des services de commerce et d'agence : représentation de navires, courtage de fret, approvisionnement et coordination de fournisseurs. Notre équipe assure des transactions fluides, des opérations efficaces et un support fiable pour le commerce et la logistique maritimes.",
+      "bullets": [
+        "Représentation de navires – Représentation des armateurs ou opérateurs dans les ports, gestion des opérations locales, formalités portuaires et communication.",
+        "Courtage de fret – Facilitation de la vente, achat ou affrètement de fret et navires, avec transparence et efficacité.",
+        "Services d'approvisionnement – Sourcing d'équipements maritimes, portuaires et industriels, pièces et consommables.",
+        "Coordination des fournisseurs – Gestion des relations avec fournisseurs, prestataires et fabricants pour livraison dans les délais et qualité.",
+        "Dédouanement et documentation – Gestion des documents d'import/export, permis et conformité pour des opérations de fret fluides.",
+        "Conseil commercial – Aide sur les tendances du marché, les prix et les aspects réglementaires pour optimiser les décisions."
+      ]
+    },
+    "12": {
+      "title": "Conseil et études de marché",
+      "description": "Nous fournissons des services de conseil et d'études de marché pour les secteurs maritime, portuaire et logistique. Notre équipe livre des analyses actionnables, un accompagnement stratégique, des études de faisabilité et des analyses de marché pour des décisions éclairées.",
+      "bullets": [
+        "Conseil maritime et portuaire – Conseils d'experts sur les opérations portuaires, la gestion des navires et les projets d'infrastructures marines.",
+        "Études et analyses de marché – Collecte et analyse de données sur les tendances, concurrents et besoins clients.",
+        "Études de faisabilité – Évaluation de nouveaux projets, investissements et extensions pour la planification stratégique.",
+        "Audits opérationnels – Évaluation de l'efficacité opérationnelle, de la sécurité et de la conformité des activités portuaires et marines.",
+        "Développement de stratégie d'entreprise – Élaboration de stratégies actionnables pour optimiser performance, croissance et compétitivité.",
+        "Formation et renforcement des capacités – Ateliers et programmes de formation pour renforcer les compétences des équipes."
+      ]
+    }
+  },
+  "markets": {
+    "title": "Nos Marchés & Clients",
+    "subtitle": "Opérant en Afrique de l'Est, dans le Golfe et le corridor de la Mer Rouge, Afrihorn dessert les grandes autorités portuaires, marines, gardes-côtes et compagnies ferroviaires avec expertise et présence locale.",
+    "regionsTitle": "Couverture Géographique",
+    "regions": {
+      "east-africa": {
+        "title": "Afrique de l'Est",
+        "description": "Kenya (Mombasa), Tanzanie (Dar es Salaam), Somalie (Mogadiscio, Berbera), Djibouti"
+      },
+      "gulf": {
+        "title": "Golfe Arabique",
+        "description": "EAU (Dubaï, Abu Dhabi), Oman (Mascate, Salalah), Qatar, Bahreïn"
+      },
+      "red-sea": {
+        "title": "Corridor Mer Rouge",
+        "description": "Arabie Saoudite (Jeddah, Port King Abdullah), Soudan (Port-Soudan), Yémen (Aden)"
+      },
+      "indian-ocean": {
+        "title": "Îles Océan Indien",
+        "description": "Seychelles, Maurice, Madagascar, Comores"
+      }
+    },
+    "clientsTitle": "Secteurs Clients Clés",
+    "clients": {
+      "ports": {
+        "title": "Autorités Portuaires",
+        "description": "Terminaux conteneurs, installations vrac, ports polyvalents, ports secs, zones franches"
+      },
+      "navies": {
+        "title": "Forces Navales",
+        "description": "Navires de guerre, patrouilleurs, sous-marins, navires support, bases et chantiers navals"
+      },
+      "coast-guards": {
+        "title": "Gardes-Côtes",
+        "description": "Intercepteurs rapides, patrouilleurs, vedettes de sauvetage, systèmes de surveillance maritime"
+      },
+      "railways": {
+        "title": "Compagnies Ferroviaires",
+        "description": "Locomotives, wagons, équipements de voie, systèmes de signalisation, pièces matériel roulant"
+      }
+    },
+    "portsTitle": "Principaux Ports Desservis",
+    "ports": {
+      "djibouti": "Port de Djibouti",
+      "mombasa": "Port de Mombasa (Kenya)",
+      "dar": "Port de Dar es Salaam (Tanzanie)",
+      "jeddah": "Port Islamique de Jeddah (Arabie)",
+      "aden": "Port d'Aden (Yémen)",
+      "mogadishu": "Port de Mogadiscio (Somalie)",
+      "berbera": "Port de Berbera (Somaliland)",
+      "port-sudan": "Port-Soudan (Soudan)"
+    }
+  },
+  "services": {
+    "title": "Nos Services",
+    "port-operations": {
+      "title": "Opérations Portuaires",
+      "shortDesc": "Services complets incluant accostage, pilotage, remorquage et manutention pour assurer sécurité et efficacité."
+    },
+    "marine-services": {
+      "title": "Services Maritimes",
+      "shortDesc": "Bunkering, eau douce, réception des déchets, avitaillement et réponse d'urgence pour maintenir les navires opérationnels."
+    },
+    "shipyard-operations": {
+      "title": "Chantier Naval",
+      "shortDesc": "Réparations à flot et en cale sèche, maintenance de routine, nettoyage de coque et réparations structurelles."
+    },
+    "docking-berthing": {
+      "title": "Support Accostage & Mouillage",
+      "shortDesc": "Fourniture et maintenance de défenses, bollards, équipements d'amarrage et systèmes de guidage."
+    },
+    "engineering-fabrication": {
+      "title": "Ingénierie & Fabrication",
+      "shortDesc": "Travaux d'acier marin, tuyauterie, usinage et solutions de rénovation avec matériaux certifiés marine."
+    },
+    "safety-compliance": {
+      "title": "Sécurité, Conformité & Inspection",
+      "shortDesc": "Audits de sécurité, inspections, tests CND et conformité IMO, SOLAS et MARPOL."
+    },
+    "equipment-supply": {
+      "title": "Équipements Portuaires",
+      "shortDesc": "Fourniture de grues, reach stackers, chariots, outils marins et aides à la navigation adaptés aux besoins."
+    },
+    "project-technical": {
+      "title": "Support Projet & Technique",
+      "shortDesc": "Gestion de projet, supervision technique et solutions clé en main pour infrastructures portuaires."
+    },
+    "logistics-supply": {
+      "title": "Logistique & Supply Chain",
+      "shortDesc": "Logistique de bout en bout incluant transport, dédouanement, entreposage et optimisation de la chaîne."
+    },
+    "offshore-support": {
+      "title": "Navires Support Offshore",
+      "shortDesc": "Transfert d'équipage, ravitaillement, manutention sous-marine et logistique pour projets offshore."
+    },
+    "trading-agencies": {
+      "title": "Négoce & Agences",
+      "shortDesc": "Représentation de navires, courtage de fret, approvisionnement et coordination fournisseurs."
+    },
+    "consultancies-research": {
+      "title": "Conseil & Études",
+      "shortDesc": "Conseil expert en opérations portuaires, études de marché, faisabilité et stratégie commerciale."
+    }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "intro": "Nous sommes toujours à l'écoute pour améliorer nos produits et services. Contactez-nous et dites-nous comment nous pouvons vous aider.",
+    "name": "Nom complet",
+    "email": "Adresse e-mail",
+    "company": "Entreprise",
+    "message": "Message",
+    "messagePlaceholder": "Saisissez votre message ici",
+    "send": "Envoyer",
+    "sendEmail": "Envoyer par e-mail",
+    "sendWhatsApp": "WhatsApp",
+    "whatsappPrefill": "Bonjour, je souhaite entrer en contact avec Afrihorn.",
+    "coordinates": "Nos coordonnées",
+    "address": "Émirats arabes unis",
+    "emailLabel": "E-mail",
+    "phoneLabel": "Téléphone",
+    "phone": "+971 XX XXX XXXX",
+    "supportEmail": "support@afrihorn.com",
+    "weAreHere": "Nous sommes ici"
+  },
+  "footer": {
+    "copyright": "© Afrihorn. Tous droits réservés."
+  }
+}

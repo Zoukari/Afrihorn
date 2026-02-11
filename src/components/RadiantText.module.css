@@ -1,0 +1,78 @@
+/* Wrapper: base text (readable) + sweep overlay (rose effect) */
+.wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.base {
+  color: rgba(0, 18, 25, 1);
+}
+
+.baseLight {
+  color: rgba(255, 255, 255, 1);
+}
+
+.sweep,
+.sweepLight {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 35%,
+    var(--radiant-rose, #e11d48) 45%,
+    var(--radiant-rose, #e11d48) 55%,
+    transparent 65%,
+    transparent 100%
+  );
+  background-size: var(--radiant-width, 100px) 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-position: calc(-100% - var(--radiant-width, 100px)) 0;
+  background-repeat: no-repeat;
+  animation: radiant var(--radiant-duration, 10s) infinite;
+}
+
+.sweepLight {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 35%,
+    var(--radiant-rose-light, #f43f5e) 45%,
+    var(--radiant-rose-light, #f43f5e) 55%,
+    transparent 65%,
+    transparent 100%
+  );
+  background-size: var(--radiant-width, 100px) 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-position: calc(-100% - var(--radiant-width, 100px)) 0;
+  background-repeat: no-repeat;
+  animation: radiant var(--radiant-duration, 10s) infinite;
+}
+
+@keyframes radiant {
+  0%,
+  90%,
+  100% {
+    background-position: calc(-100% - var(--radiant-width, 100px)) 0;
+  }
+  30%,
+  60% {
+    background-position: calc(100% + var(--radiant-width, 100px)) 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sweep,
+  .sweepLight {
+    animation: none;
+    background-position: 50% 0;
+  }
+}

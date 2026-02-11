@@ -1,0 +1,292 @@
+{
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "locations": "Where we operate",
+    "contact": "Contact"
+  },
+  "hero": {
+    "tagline": "Premium Maritime Solutions",
+    "subtitle": "Delivering excellence in port operations, marine equipment, and supply chain solutions across East Africa and the Arabian Gulf",
+    "cta": "Explore Our Services"
+  },
+  "intro": {
+    "title": "About Afrihorn",
+    "p1": "Afrihorn is a company based in The United Arab Emirates, and specializes in the supply of maritime parts and equipment, port equipment, factory and metalworking machines, consumables, tools and rolling equipment i.e., parts for locomotives, wagons etc.",
+    "p2": "We deliver all types and brands of machinery, spares, tools and equipment for different markets, anywhere in the world. We mainly focus on the East African market where we have supplied our spares and equipment to many African ports and clients. Our clients are mainly Port Authorities, Navies, Coast Guards and Railway Corporations.",
+    "p3": "Our strong, long-term relationships give us the buying power to secure you the most competitive deal. Because we do business with so many suppliers, OEM's and partners, we will connect you with a huge marketplace that helps you get whatever you need, at the time you will need it.",
+    "p4": "Thanks to our proven supply chain and extensive logistics network of partners, Afrihorn is able to offer reliable, efficient, cost-effective delivery of complete orders within a short response time.",
+    "p5": "Our team is ready to fully support you in terms of the supply of any kind of equipment, spare parts and machinery for your ports, vessels, factories and locomotives!",
+    "slide1Author": "The Company",
+    "slide1Role": "UAE Based",
+    "slide2Author": "Global Reach",
+    "slide2Role": "Worldwide Delivery",
+    "slide3Author": "Strategic Power",
+    "slide3Role": "Partnerships",
+    "slide4Author": "Logistics Network",
+    "slide4Role": "Fast & Reliable",
+    "company": "Afrihorn"
+  },
+  "sections": {
+    "1": {
+      "title": "Port Operations",
+      "description": "We provide comprehensive port operations services including vessel berthing, pilotage coordination, tug assistance, and cargo handling. Our team ensures safe, efficient, and timely vessel movements while maintaining full compliance with international port and security standards.",
+      "bullets": [
+        "Vessel berthing and anchorage management – Planning and allocation of berths and anchorages to ensure safe, efficient vessel arrivals, stays, and departures.",
+        "Pilotage, tug assistance, and mooring operations – Provision and coordination of marine pilots, tugboats, and mooring crews to safely maneuver vessels within port limits.",
+        "Vessel Traffic Service (VTS) coordination – Monitoring and managing vessel movements using radar, AIS, and communication systems to maintain navigational safety.",
+        "Cargo handling and terminal operations – Loading, unloading, and yard handling of containers, bulk, breakbulk, and project cargo.",
+        "Container, bulk, and general cargo handling – Specialized handling solutions tailored to different cargo types, ensuring efficiency and cargo integrity.",
+        "Port security (ISPS Code compliance) – Implementation of security measures, access control, and monitoring in accordance with the ISPS Code.",
+        "Port facility maintenance – Inspection, repair, and upkeep of quays, jetties, yards, and port infrastructure."
+      ]
+    },
+    "2": {
+      "title": "Marine Services",
+      "description": "Our marine services support vessels throughout their port stay, including bunkering, freshwater supply, waste reception, ship chandling, and emergency response. We deliver reliable services that keep vessels operational and compliant with MARPOL regulations.",
+      "bullets": [
+        "Bunkering and freshwater supply – Supply of marine fuel and potable water to vessels in compliance with international standards.",
+        "Ship chandling and marine supplies – Provision of provisions, spare parts, tools, and consumables required for vessel operations.",
+        "Waste reception and MARPOL services – Collection and disposal of ship-generated waste in accordance with MARPOL regulations.",
+        "Ballast water management support – Assistance with ballast water treatment, compliance, and documentation.",
+        "Marine firefighting and emergency response – Readiness and response to onboard fires, collisions, and marine emergencies.",
+        "Oil spill response and pollution control – Deployment of booms, skimmers, and cleanup equipment to protect the marine environment."
+      ]
+    },
+    "3": {
+      "title": "Shipyard Operations",
+      "description": "Our shipyard operations cover afloat and dry-dock repairs, routine maintenance, and emergency works. We handle hull, mechanical, electrical, and structural repairs to minimize downtime and ensure vessel seaworthiness.",
+      "bullets": [
+        "Ship repair and maintenance – Routine and emergency repairs carried out afloat or in dry dock to maintain vessel seaworthiness.",
+        "Dry docking and undocking operations – Controlled docking operations for hull inspection, maintenance, and major repairs.",
+        "Hull cleaning, blasting, and painting – Removal of fouling and application of protective coatings to enhance vessel performance.",
+        "Steel fabrication and structural repairs – Repair or replacement of hull structures, decks, and frames using approved methods.",
+        "Mechanical, electrical, and automation works – Maintenance and repair of engines, generators, electrical systems, and automation equipment.",
+        "Propeller, rudder, and shaft repairs – Inspection, alignment, and repair of propulsion and steering components."
+      ]
+    },
+    "4": {
+      "title": "Docking & Berthing Support",
+      "description": "We supply and maintain docking and berthing support systems, including fenders, bollards, mooring equipment, and berthing guidance solutions. These systems enhance safety and precision during vessel docking operations.",
+      "bullets": [
+        "Docking aid and berthing guidance systems – Installation and maintenance of systems that assist vessels during berthing and docking.",
+        "Fender and bollard inspection & maintenance – Ensuring berthing equipment is safe, functional, and capable of handling design loads.",
+        "Mooring equipment installation and testing – Supply, installation, and load testing of mooring lines, hooks, and accessories.",
+        "Load testing of cranes and lifting gear – Certification and testing of lifting equipment to ensure operational safety."
+      ]
+    },
+    "5": {
+      "title": "Engineering & Fabrication",
+      "description": "Our engineering and fabrication services include marine steel works, pipe fabrication, machining, and retrofit solutions. All works are carried out using marine-grade materials and industry-approved practices.",
+      "bullets": [
+        "Marine steel fabrication – Fabrication of marine-grade steel components for vessels and port infrastructure.",
+        "Pipe fabrication and installation – Manufacturing and installation of piping systems for fuel, ballast, and utilities.",
+        "Machining and workshop services – Precision machining, turning, milling, and workshop-based repair services.",
+        "Retrofit and conversion works – Modification of vessels or port equipment to meet new operational or regulatory requirements."
+      ]
+    },
+    "6": {
+      "title": "Safety, Compliance & Inspection",
+      "description": "We support vessels and port facilities with safety audits, inspections, and compliance services aligned with IMO, SOLAS, and MARPOL requirements. Our focus is on operational safety, regulatory compliance, and risk reduction.",
+      "bullets": [
+        "Class-approved repair works – Execution of repairs in accordance with classification society requirements.",
+        "IMO, SOLAS, MARPOL compliance services – Ensuring vessels and facilities meet international maritime regulations.",
+        "Safety audits and inspections – Assessment of operational safety, procedures, and compliance standards.",
+        "Non-destructive testing (NDT) – Inspection techniques such as ultrasonic, magnetic, and radiographic testing without damaging structures."
+      ]
+    },
+    "7": {
+      "title": "Port & Shipyard Equipment",
+      "description": "We supply a wide range of port and shipyard equipment, including lifting equipment, handling machinery, marine tools, and navigation aids. Our solutions are tailored to meet operational and environmental demands.",
+      "bullets": [
+        "Supply of port handling equipment – Provision of cranes, reach stackers, forklifts, and terminal equipment.",
+        "Shipyard tools and machinery – Supply of specialized tools and machines for ship repair and maintenance.",
+        "Cranes, forklifts, and lifting equipment – Delivery, installation, and maintenance of lifting and handling equipment.",
+        "Navigation and marine guidance equipment – Supply and servicing of buoys, beacons, AIS, and berthing guidance systems."
+      ]
+    },
+    "8": {
+      "title": "Project & Technical Support",
+      "description": "We offer project management, technical supervision, and turnkey solutions for port and shipyard projects. From planning to execution, we ensure quality, efficiency, and timely delivery.",
+      "bullets": [
+        "Project management for repair works – Planning, coordination, and execution of ship repair and port projects.",
+        "Technical supervision and consultancy – Expert oversight to ensure quality, safety, and compliance.",
+        "Spare parts sourcing and logistics – Procurement and delivery of marine and industrial spare parts.",
+        "Turnkey port and shipyard solutions – End-to-end solutions covering design, supply, installation, and commissioning."
+      ]
+    },
+    "9": {
+      "title": "Logistics & Supply Chain Support",
+      "description": "We provide end-to-end logistics solutions for maritime and port operations, including cargo transportation, customs clearance, warehousing, and supply chain management. Our services ensure smooth, timely, and cost-efficient delivery of goods from origin to destination.",
+      "bullets": [
+        "Cargo transportation and trucking – Efficient movement of goods between ports, warehouses, and destinations.",
+        "Customs clearance and documentation – Handling import/export documentation and regulatory compliance.",
+        "Warehousing and inventory management – Secure storage, handling, and inventory control of goods.",
+        "Intermodal transport coordination – Seamless movement of cargo across sea, rail, and road networks.",
+        "Supply chain planning and optimization – Streamlined logistics planning for cost-effective and timely delivery."
+      ]
+    },
+    "10": {
+      "title": "Offshore Support Vessel",
+      "description": "We provide comprehensive offshore support services including crew transfer, supply vessel operations, subsea equipment handling, and platform logistics. Our solutions ensure safe, efficient, and reliable operations for offshore projects.",
+      "bullets": [
+        "Crew transfer vessel operations – Safe and reliable transport of personnel to offshore platforms.",
+        "Offshore supply vessel operations – Delivery of equipment, materials, and provisions to offshore sites.",
+        "Subsea equipment handling – Handling and deployment of subsea tools and machinery.",
+        "Platform logistics and material handling – Coordinated support for offshore operations and maintenance.",
+        "Offshore safety and emergency response support – Readiness to manage emergencies and ensure crew safety offshore."
+      ]
+    },
+    "11": {
+      "title": "Trading & Agencies",
+      "description": "We offer trading and agency services, including vessel representation, cargo brokering, procurement, and supplier coordination. Our team ensures smooth transactions, efficient operations, and reliable support for maritime trade and logistics.",
+      "bullets": [
+        "Vessel representation – Acting on behalf of shipowners or operators at ports, managing local operations, port formalities, and communication.",
+        "Cargo brokering – Facilitating the sale, purchase, or chartering of cargo and vessels, ensuring transparent and efficient transactions.",
+        "Procurement services – Sourcing marine, port, and industrial equipment, spare parts, and consumables for clients.",
+        "Supplier coordination – Managing relationships with suppliers, service providers, and manufacturers to ensure timely delivery and quality compliance.",
+        "Customs and documentation support – Handling import/export documentation, permits, and regulatory compliance for smooth cargo operations.",
+        "Trade advisory – Offering guidance on market trends, pricing, and regulatory matters to optimize trading decisions."
+      ]
+    },
+    "12": {
+      "title": "Consultancies & Marketing Research",
+      "description": "We provide expert consultancy and marketing research services tailored to the maritime, port, and logistics sectors. Our team delivers actionable insights, strategic guidance, feasibility studies, and market analysis to support informed business decisions.",
+      "bullets": [
+        "Maritime and port consultancy – Offering expert advice on port operations, vessel management, and marine infrastructure projects.",
+        "Market research and analysis – Collecting and analyzing data on market trends, competitors, and customer needs.",
+        "Feasibility studies – Evaluating new projects, investments, and operational expansions to support strategic planning.",
+        "Operational audits – Assessing operational efficiency, safety, and compliance of port and marine activities.",
+        "Business strategy development – Formulating actionable strategies to optimize performance, growth, and competitiveness.",
+        "Training and capacity building – Providing workshops and training programs to enhance workforce skills and knowledge."
+      ]
+    }
+  },
+  "markets": {
+    "title": "Our Markets & Clients",
+    "subtitle": "Operating across East Africa, the Gulf, and the Red Sea corridor, Afrihorn serves major port authorities, navies, coast guards, and railway corporations with proven expertise and local presence.",
+    "regionsTitle": "Geographic Coverage",
+    "regions": {
+      "east-africa": {
+        "title": "East Africa",
+        "description": "Kenya (Mombasa), Tanzania (Dar es Salaam), Somalia (Mogadishu, Berbera), Djibouti"
+      },
+      "gulf": {
+        "title": "Arabian Gulf",
+        "description": "UAE (Dubai, Abu Dhabi), Oman (Muscat, Salalah), Qatar, Bahrain"
+      },
+      "red-sea": {
+        "title": "Red Sea Corridor",
+        "description": "Saudi Arabia (Jeddah, King Abdullah Port), Sudan (Port Sudan), Yemen (Aden)"
+      },
+      "indian-ocean": {
+        "title": "Indian Ocean Islands",
+        "description": "Seychelles, Mauritius, Madagascar, Comoros Islands"
+      }
+    },
+    "clientsTitle": "Key Client Sectors",
+    "clients": {
+      "ports": {
+        "title": "Port Authorities",
+        "description": "Container terminals, bulk cargo facilities, multi-purpose ports, dry ports, and free trade zones"
+      },
+      "navies": {
+        "title": "Naval Forces",
+        "description": "Warships, patrol vessels, submarines, support craft, naval bases and shipyards"
+      },
+      "coast-guards": {
+        "title": "Coast Guards",
+        "description": "Fast interceptors, patrol boats, rescue vessels, marine surveillance systems"
+      },
+      "railways": {
+        "title": "Railway Corporations",
+        "description": "Locomotives, wagons, track equipment, signaling systems, rolling stock parts"
+      }
+    },
+    "portsTitle": "Major Ports Served",
+    "ports": {
+      "djibouti": "Port of Djibouti",
+      "mombasa": "Mombasa Port (Kenya)",
+      "dar": "Dar es Salaam Port (Tanzania)",
+      "jeddah": "Jeddah Islamic Port (KSA)",
+      "aden": "Port of Aden (Yemen)",
+      "mogadishu": "Mogadishu Port (Somalia)",
+      "berbera": "Berbera Port (Somaliland)",
+      "port-sudan": "Port Sudan (Sudan)"
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "port-operations": {
+      "title": "Port Operations",
+      "shortDesc": "Comprehensive services including vessel berthing, pilotage coordination, tug assistance, and cargo handling ensuring safe and efficient movements."
+    },
+    "marine-services": {
+      "title": "Marine Services",
+      "shortDesc": "Bunkering, freshwater supply, waste reception, ship chandling, and emergency response to keep vessels operational and compliant."
+    },
+    "shipyard-operations": {
+      "title": "Shipyard Operations",
+      "shortDesc": "Afloat and dry-dock repairs, routine maintenance, hull cleaning, and structural repairs to ensure vessel seaworthiness."
+    },
+    "docking-berthing": {
+      "title": "Docking & Berthing Support",
+      "shortDesc": "Supply and maintenance of fenders, bollards, mooring equipment, and berthing guidance systems for safe docking."
+    },
+    "engineering-fabrication": {
+      "title": "Engineering & Fabrication",
+      "shortDesc": "Marine steel works, pipe fabrication, machining, and retrofit solutions using marine-grade materials."
+    },
+    "safety-compliance": {
+      "title": "Safety, Compliance & Inspection",
+      "shortDesc": "Safety audits, inspections, NDT testing, and compliance services aligned with IMO, SOLAS, and MARPOL."
+    },
+    "equipment-supply": {
+      "title": "Port & Shipyard Equipment",
+      "shortDesc": "Supply of cranes, reach stackers, forklifts, marine tools, and navigation aids tailored to operational demands."
+    },
+    "project-technical": {
+      "title": "Project & Technical Support",
+      "shortDesc": "Project management, technical supervision, and turnkey solutions for port and shipyard projects from planning to execution."
+    },
+    "logistics-supply": {
+      "title": "Logistics & Supply Chain",
+      "shortDesc": "End-to-end logistics including cargo transportation, customs clearance, warehousing, and supply chain optimization."
+    },
+    "offshore-support": {
+      "title": "Offshore Support Vessel",
+      "shortDesc": "Crew transfer, supply vessel operations, subsea equipment handling, and platform logistics for offshore projects."
+    },
+    "trading-agencies": {
+      "title": "Trading & Agencies",
+      "shortDesc": "Vessel representation, cargo brokering, procurement, and supplier coordination ensuring smooth maritime trade."
+    },
+    "consultancies-research": {
+      "title": "Consultancies & Research",
+      "shortDesc": "Expert advice on port operations, market research, feasibility studies, and business strategy development."
+    }
+  },
+  "contact": {
+    "title": "Contact us",
+    "intro": "We are always looking for ways to improve our products and services. Contact us and let us know how we can help you.",
+    "name": "Full name",
+    "email": "Email Address",
+    "company": "Company",
+    "message": "Message",
+    "messagePlaceholder": "Type your message here",
+    "send": "Submit",
+    "sendEmail": "Send by email",
+    "sendWhatsApp": "WhatsApp",
+    "whatsappPrefill": "Hello, I would like to get in touch with Afrihorn.",
+    "coordinates": "Our coordinates",
+    "address": "United Arab Emirates",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "phone": "+971 XX XXX XXXX",
+    "supportEmail": "support@afrihorn.com",
+    "weAreHere": "We are here"
+  },
+  "footer": {
+    "copyright": "© Afrihorn. All rights reserved."
+  }
+}

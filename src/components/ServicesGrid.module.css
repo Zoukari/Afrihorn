@@ -1,0 +1,118 @@
+.serviceSection {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.serviceNumber {
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 140px);
+  transform: translateY(-50%);
+  font-size: clamp(4rem, 12vw, 8rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: rgba(0, 168, 232, 0.5);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.imageContainer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.bgImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 18, 25, 0.75) 0%,
+    rgba(0, 18, 25, 0.4) 50%,
+    rgba(0, 18, 25, 0.75) 100%
+  );
+}
+
+.contentWrap {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: var(--radius-lg);
+}
+
+.serviceTitle {
+  font-size: var(--h2-size);
+  font-weight: 800;
+  color: white;
+  margin: 0 0 1.5rem;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  line-height: 1.1;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+}
+
+.serviceText {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  font-weight: 300;
+  max-width: 800px;
+  margin: 0 auto;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+}
+
+.progress {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 3rem;
+  height: 4px;
+  background: var(--color-accent);
+  transform-origin: left;
+  z-index: 100;
+}
+
+.servicesScroll {
+  scroll-snap-type: y mandatory;
+}
+
+@media (max-width: 768px) {
+  .contentWrap {
+    padding: 2rem 1.5rem;
+  }
+
+  .serviceTitle {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .serviceText {
+    font-size: 1.1rem;
+  }
+
+  .serviceNumber {
+    left: calc(50% + 80px);
+    font-size: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .serviceNumber {
+    transform: translateY(-50%);
+  }
+}
