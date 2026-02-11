@@ -22,6 +22,14 @@
   background-attachment: fixed;
 }
 
+@media (max-width: 768px) {
+  .gradient {
+    background-image: url('/marines-services.jpg');
+    background-attachment: scroll;
+    background-position: center center;
+  }
+}
+
 .gradient::before {
   content: '';
   position: absolute;
