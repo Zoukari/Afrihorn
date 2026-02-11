@@ -17,7 +17,7 @@
   letter-spacing: -0.04em;
   color: rgba(0, 168, 232, 0.5);
   pointer-events: none;
-  z-index: 1;
+  z-index: 3;
 }
 
 .imageContainer {
@@ -92,25 +92,13 @@
 }
 
 @media (max-width: 768px) {
-  .serviceSection {
-    align-items: flex-start;
-    padding-top: 5rem;
-    padding-bottom: 3rem;
-    min-height: 100vh;
-  }
-
   .contentWrap {
-    position: relative;
-    z-index: 2;
-    padding: 2rem 1.25rem;
-    width: 100%;
-    max-width: 100%;
+    padding: 2rem 1.5rem;
   }
 
   .serviceTitle {
-    font-size: clamp(1.5rem, 6vw, 2rem);
-    margin-bottom: 1rem;
-    line-height: 1.2;
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
   }
 
   .serviceText {
@@ -119,11 +107,11 @@
   }
 
   .serviceNumber {
-    top: 1.5rem;
+    display: block;
     left: 50%;
-    transform: translate(-50%, 0);
-    font-size: 2.5rem;
-    opacity: 0.4;
+    transform: translate(-50%, -50%);
+    font-size: clamp(3rem, 15vw, 5rem);
+    opacity: 0.3;
   }
 }
 

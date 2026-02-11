@@ -133,6 +133,19 @@
   margin: 0;
 }
 
+.klikLink {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.klikLink:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
 .social {
   display: flex;
   gap: 0.75rem;

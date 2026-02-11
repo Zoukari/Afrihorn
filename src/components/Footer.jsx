@@ -95,7 +95,18 @@ export function Footer() {
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
         >
-          <p className={styles.copyright}>{t('footer.copyright')}</p>
+          <p className={styles.copyright}>
+            © {new Date().getFullYear()}{' '}
+            <a 
+              href="https://klikdj.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={styles.klikLink}
+            >
+              Klik
+            </a>
+            . All rights reserved.
+          </p>
           <div className={styles.social}>
             <a href="https://wa.me/971XXXXXXXXX" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="WhatsApp">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
