@@ -4,7 +4,7 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Intro } from './components/Intro';
 import { Markets } from './components/Markets';
-import { ServicesGrid } from './components/ServicesGrid';
+import { ServicesSection } from './components/ServicesSection';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { FloatingActions } from './components/FloatingActions';
@@ -19,8 +19,7 @@ export default function App() {
           <Hero />
           <Intro />
           <Markets />
-          <div id="services" />
-          <ServicesGrid />
+          <ServicesSection />
           <Contact />
         </main>
         <Footer />
