@@ -20,7 +20,9 @@ export function LanguageProvider({ children }) {
 
   useEffect(() => {
     if (typeof document !== 'undefined') {
-      document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+      // On garde toujours la mise en page en LTR pour éviter que le Hero et le layout ne s'inversent,
+      // mais on met à jour l'attribut lang pour l'accessibilité et les moteurs de rendu.
+      document.documentElement.setAttribute('dir', 'ltr');
       document.documentElement.setAttribute('lang', lang === 'ar' ? 'ar' : lang === 'fr' ? 'fr' : 'en');
     }
   }, [lang]);

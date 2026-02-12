@@ -12,6 +12,8 @@
   },
   "intro": {
     "title": "À propos d'Afrihorn",
+    "sectionTitle": "À Propos",
+    "subtitle": "Votre partenaire de confiance pour l'excellence maritime",
     "p1": "Afrihorn est une société basée aux Émirats arabes unis, spécialisée dans la fourniture de pièces et équipements maritimes, équipements portuaires, machines d'usine et de travail des métaux, consommables, outils et équipements roulants (pièces pour locomotives, wagons, etc.).",
     "p2": "Nous livrons tous types et marques de machines, pièces détachées, outils et équipements pour différents marchés, partout dans le monde. Nous nous concentrons principalement sur le marché est-africain où nous avons fourni nos pièces et équipements à de nombreux ports et clients africains. Nos clients sont principalement les autorités portuaires, marines, garde-côtes et sociétés ferroviaires.",
     "p3": "Nos relations solides et durables nous donnent un pouvoir d'achat pour vous garantir l'offre la plus compétitive. Grâce à nos nombreux fournisseurs, constructeurs et partenaires, nous vous connectons à un vaste marché pour obtenir ce dont vous avez besoin, au moment où vous en avez besoin.",
@@ -26,6 +28,16 @@
     "slide4Author": "Réseau Logistique",
     "slide4Role": "Rapide & Fiable",
     "company": "Afrihorn"
+  },
+  "services": {
+    "subtitle": "Des solutions innovantes pour l'excellence maritime",
+    "clickForMore": "Cliquez pour plus d'infos"
+  },
+  "markets": {
+    "subtitle": "Au service des principaux hubs maritimes d'Afrique de l'Est et du Golfe Arabique"
+  },
+  "contact": {
+    "subtitle": "Parlons de vos besoins maritimes"
   },
   "sections": {
     "1": {
@@ -217,6 +229,8 @@
   },
   "services": {
     "title": "Nos Services",
+    "subtitle": "Des solutions innovantes pour l'excellence maritime",
+    "clickForMore": "Cliquez pour plus d'infos",
     "port-operations": {
       "title": "Opérations Portuaires",
       "shortDesc": "Services complets incluant accostage, pilotage, remorquage et manutention pour assurer sécurité et efficacité."

@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import { RadiantText } from './RadiantText';
+import { SectionTitle } from './SectionTitle';
 import styles from './Markets.module.css';
+import titleStyles from './MarketsTitleOverride.module.css';
 
 export function Markets() {
   const { t, lang } = useLanguage();
@@ -27,22 +29,13 @@ export function Markets() {
 
   return (
     <section id="markets" className={styles.section}>
+      <div className={titleStyles.whiteTitle}>
+        <SectionTitle subtitle={t('markets.subtitle')}>
+          {t('nav.locations')}
+        </SectionTitle>
+      </div>
       <div className={styles.container}>
         
-        {/* Header */}
-        <motion.div 
-          className={styles.header}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <h2 className={styles.mainTitle}>
-            {t('markets.title')}
-          </h2>
-          <p className={styles.subtitle}>
-            {t('markets.subtitle')}
-          </p>
-        </motion.div>
 
         {/* Geographic Coverage - Styled List */}
         <div className={styles.gridSection}>

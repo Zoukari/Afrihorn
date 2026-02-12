@@ -1,56 +1,73 @@
-.container {
+.section {
   position: relative;
-  width: 100%;
-  padding: 3rem 0;
+  padding: 2rem 0 6rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 247, 250, 1) 100%);
+  overflow: hidden;
+  /* On force LTR pour garder le sens du défilement identique même en arabe */
+  direction: ltr;
 }
 
-.carousel {
-  width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  scroll-behavior: smooth;
-}
-
-.carousel::-webkit-scrollbar {
-  display: none;
-}
-
-.carouselInner {
+.marqueeContainer {
+  position: relative;
   display: flex;
-  gap: 1rem;
-  padding: 0 1rem 1rem;
-  min-width: min-content;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.marquee {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: 1.5rem;
+}
+
+.marquee:hover .marqueeContent {
+  animation-play-state: paused;
+}
+
+.marqueeContent {
+  flex-shrink: 0;
+  display: flex;
+  gap: 1.5rem;
+  min-width: 100%;
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+
+.marqueeReverse .marqueeContent {
+  animation-direction: reverse;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 1.5rem));
+  }
 }
 
 .card {
   position: relative;
-  width: 320px;
-  height: 480px;
+  width: 280px;
+  height: 380px;
   flex-shrink: 0;
   border-radius: 24px;
   overflow: hidden;
   cursor: pointer;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .card:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(20px);
-  border-color: rgba(233, 30, 99, 0.3);
-}
-
-@media (max-width: 768px) {
-  .card {
-    width: 280px;
-    height: 400px;
-  }
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+  border-color: rgba(233, 30, 99, 0.4);
+  z-index: 10;
 }
 
 .cardImageContainer {
@@ -59,10 +76,51 @@
   z-index: 1;
 }
 
+.cardImageContainer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+}
+
+.cardClickLabel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-top: 2rem;
+  text-align: center;
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+}
+
+.card:hover .cardImageContainer::after,
+.card:hover .cardClickLabel {
+  opacity: 1;
+}
+
 .cardImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: filter 0.4s ease;
+}
+
+.card:hover .cardImage {
+  filter: blur(4px);
 }
 
 .cardOverlay {
@@ -78,7 +136,7 @@
 
 .cardContent {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -87,16 +145,17 @@
 }
 
 .cardNumber {
+  font-family: var(--font-heading);
   font-size: 0.875rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--color-accent);
   margin-bottom: 0.5rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
 }
 
 .cardTitle {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 600;
   color: white;
   line-height: 1.2;
@@ -105,40 +164,27 @@
   letter-spacing: 0.05em;
 }
 
-.controls {
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.5rem;
-  margin-top: 1.5rem;
-  padding: 0 1rem;
+.gradientLeft,
+.gradientRight {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 15%;
+  pointer-events: none;
+  z-index: 10;
 }
 
-.controlButton {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.9);
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
-  color: #001219;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.gradientLeft {
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1), transparent);
 }
 
-.controlButton:hover:not(:disabled) {
-  background: white;
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+.gradientRight {
+  right: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 1), transparent);
 }
 
-.controlButton:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
-
+/* Modal styles */
 .modalOverlay {
   position: fixed;
   inset: 0;
@@ -216,11 +262,12 @@
 
 .modalNumber {
   display: inline-block;
+  font-family: var(--font-heading);
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--color-accent);
   margin-bottom: 0.5rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
 }
 
 .modalTitle {
@@ -241,19 +288,21 @@
   margin: 0;
 }
 
-@media (min-width: 640px) {
+@media (max-width: 768px) {
   .card {
-    width: 320px;
-    height: 450px;
-  }
-}
-
-@media (min-width: 768px) {
-  .carouselInner {
-    padding: 0 2rem 1rem;
+    width: 260px;
+    height: 350px;
   }
 
-  .card:last-child {
-    margin-right: 33%;
+  .cardTitle {
+    font-size: 1.25rem;
+  }
+
+  .modalTitle {
+    font-size: 1.75rem;
+  }
+
+  .modalDescription {
+    font-size: 1rem;
   }
 }

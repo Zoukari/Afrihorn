@@ -3,7 +3,9 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import { RadiantText } from './RadiantText';
 import { InteractiveHoverButton } from './InteractiveHoverButton';
+import { SectionTitle } from './SectionTitle';
 import styles from './Contact.module.css';
+import lightStyles from './SectionTitleLight.module.css';
 
 const formItem = {
   hidden: { opacity: 0, y: 20 },
@@ -37,6 +39,11 @@ export function Contact() {
 
   return (
     <section id="contact" className={styles.section}>
+      <div className={lightStyles.lightSubtitle}>
+        <SectionTitle>
+          {t('nav.contact')}
+        </SectionTitle>
+      </div>
       <div className={styles.container}>
         {/* Left column: icon, title, intro, contact details, map */}
         <motion.div

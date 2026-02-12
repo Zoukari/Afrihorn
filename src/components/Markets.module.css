@@ -12,10 +12,10 @@
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(0, 168, 232, 0.08) 0%,
+    rgba(233, 30, 99, 0.08) 0%,
     transparent 40%,
     transparent 60%,
-    rgba(0, 119, 182, 0.06) 100%
+    rgba(194, 24, 91, 0.06) 100%
   );
   animation: gradientShift 12s ease-in-out infinite;
   pointer-events: none;
@@ -86,7 +86,7 @@
 
 .regionItem:hover {
   background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(0, 168, 232, 0.4);
+  border-color: rgba(233, 30, 99, 0.4);
   transform: translateX(8px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
@@ -120,7 +120,7 @@
   background: rgba(255, 255, 255, 0.1);
   border-color: var(--color-accent);
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 168, 232, 0.15);
+  box-shadow: 0 12px 40px rgba(233, 30, 99, 0.15);
 }
 
 .clientLine {
@@ -170,7 +170,7 @@
 }
 
 .portItem:hover {
-  background: rgba(0, 168, 232, 0.2);
+  background: rgba(233, 30, 99, 0.2);
   color: white;
 }
 

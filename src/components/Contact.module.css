@@ -1,7 +1,8 @@
 .section {
   position: relative;
   padding: 6rem 2rem 8rem;
-  background: #f9fafb;
+  background: linear-gradient(135deg, rgba(249, 250, 251, 0.9) 0%, rgba(255, 255, 255, 0.95) 100%);
+  backdrop-filter: blur(10px);
   overflow: hidden;
 }
 
@@ -33,7 +34,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(233, 30, 99, 0.1);
   border-radius: var(--radius-lg);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
@@ -149,14 +152,14 @@
 
 .input:hover,
 .textarea:hover {
-  border-color: rgba(0, 168, 232, 0.4);
+  border-color: rgba(233, 30, 99, 0.4);
 }
 
 .input:focus,
 .textarea:focus {
   outline: none;
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(0, 168, 232, 0.12);
+  box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.12);
 }
 
 .submitBtn {

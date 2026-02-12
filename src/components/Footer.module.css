@@ -13,7 +13,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0, 168, 232, 0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(233, 30, 99, 0.5), transparent);
 }
 
 .container {

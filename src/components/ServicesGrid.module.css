@@ -15,7 +15,7 @@
   font-size: clamp(4rem, 12vw, 8rem);
   font-weight: 700;
   letter-spacing: -0.04em;
-  color: rgba(0, 168, 232, 0.5);
+  color: rgba(233, 30, 99, 0.5);
   pointer-events: none;
   z-index: 3;
 }

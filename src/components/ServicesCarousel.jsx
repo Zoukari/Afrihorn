@@ -4,7 +4,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { RadiantText } from './RadiantText';
 import styles from './ServicesCarousel.module.css';
 
-const services = [
+const servicesData = [
   { id: 'port-operations', image: '/port_operations.avif' },
   { id: 'marine-services', image: '/marine_services.avif' },
   { id: 'shipyard-operations', image: '/shipyard.jpg' },
@@ -18,6 +18,9 @@ const services = [
   { id: 'trading-agencies', image: '/trading_agencies.jpeg' },
   { id: 'consultancies-research', image: '/project_technical_support.jpeg' },
 ];
+
+// Triple les services pour l'effet infini
+const services = [...servicesData, ...servicesData, ...servicesData];
 
 function ServiceCard({ service, index, onClick }) {
   const { t } = useLanguage();
@@ -120,36 +123,51 @@ function ServiceModal({ service, index, onClose }) {
 
 export function ServicesCarousel() {
   const carouselRef = useRef(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
   const [selectedService, setSelectedService] = useState(null);
+  const [isScrolling, setIsScrolling] = useState(false);
 
-  const checkScrollability = () => {
-    if (carouselRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
-    }
-  };
-
+  // Scroll infini
   useEffect(() => {
-    checkScrollability();
     const carousel = carouselRef.current;
-    if (carousel) {
-      carousel.addEventListener('scroll', checkScrollability);
-      return () => carousel.removeEventListener('scroll', checkScrollability);
-    }
-  }, []);
+    if (!carousel) return;
+
+    const handleScroll = () => {
+      if (isScrolling) return;
+      
+      const { scrollLeft, scrollWidth, clientWidth } = carousel;
+      const singleSetWidth = scrollWidth / 3;
+      
+      // Si on arrive à la fin du deuxième set, revenir au début du deuxième set
+      if (scrollLeft >= singleSetWidth * 2 - clientWidth) {
+        setIsScrolling(true);
+        carousel.scrollLeft = singleSetWidth;
+        setTimeout(() => setIsScrolling(false), 50);
+      }
+      // Si on arrive au début du premier set, aller à la fin du deuxième set
+      else if (scrollLeft <= 0) {
+        setIsScrolling(true);
+        carousel.scrollLeft = singleSetWidth;
+        setTimeout(() => setIsScrolling(false), 50);
+      }
+    };
+
+    // Commencer au milieu (deuxième set)
+    const singleSetWidth = carousel.scrollWidth / 3;
+    carousel.scrollLeft = singleSetWidth;
+
+    carousel.addEventListener('scroll', handleScroll);
+    return () => carousel.removeEventListener('scroll', handleScroll);
+  }, [isScrolling]);
 
   const scrollLeft = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+      carouselRef.current.scrollBy({ left: -350, behavior: 'smooth' });
     }
   };
 
   const scrollRight = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+      carouselRef.current.scrollBy({ left: 350, behavior: 'smooth' });
     }
   };
 
@@ -159,10 +177,10 @@ export function ServicesCarousel() {
         <div className={styles.carouselInner}>
           {services.map((service, index) => (
             <ServiceCard
-              key={service.id}
+              key={`${service.id}-${index}`}
               service={service}
-              index={index}
-              onClick={setSelectedService}
+              index={index % servicesData.length}
+              onClick={() => setSelectedService(index % servicesData.length)}
             />
           ))}
         </div>
@@ -171,7 +189,6 @@ export function ServicesCarousel() {
       <div className={styles.controls}>
         <button
           className={styles.controlButton}
-          disabled={!canScrollLeft}
           onClick={scrollLeft}
           aria-label="Scroll left"
         >
@@ -182,7 +199,6 @@ export function ServicesCarousel() {
         </button>
         <button
           className={styles.controlButton}
-          disabled={!canScrollRight}
           onClick={scrollRight}
           aria-label="Scroll right"
         >
@@ -196,7 +212,7 @@ export function ServicesCarousel() {
       <AnimatePresence>
         {selectedService !== null && (
           <ServiceModal
-            service={services[selectedService]}
+            service={servicesData[selectedService]}
             index={selectedService}
             onClose={() => setSelectedService(null)}
           />

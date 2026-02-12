@@ -1,4 +1,24 @@
 /* App-level layout */
+body {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background-attachment: fixed;
+}
+
 main {
   padding-top: 0;
+  position: relative;
+}
+
+main::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(233, 30, 99, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(240, 98, 146, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
 }

@@ -1,0 +1,11 @@
+.whiteTitle h2 {
+  color: white !important;
+}
+
+.whiteTitle h2::after {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent) !important;
+}
+
+.whiteTitle p {
+  color: rgba(255, 255, 255, 0.85) !important;
+}

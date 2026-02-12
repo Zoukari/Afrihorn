@@ -12,6 +12,8 @@
   },
   "intro": {
     "title": "About Afrihorn",
+    "sectionTitle": "About Us",
+    "subtitle": "Your trusted partner in maritime excellence",
     "p1": "Afrihorn is a company based in The United Arab Emirates, and specializes in the supply of maritime parts and equipment, port equipment, factory and metalworking machines, consumables, tools and rolling equipment i.e., parts for locomotives, wagons etc.",
     "p2": "We deliver all types and brands of machinery, spares, tools and equipment for different markets, anywhere in the world. We mainly focus on the East African market where we have supplied our spares and equipment to many African ports and clients. Our clients are mainly Port Authorities, Navies, Coast Guards and Railway Corporations.",
     "p3": "Our strong, long-term relationships give us the buying power to secure you the most competitive deal. Because we do business with so many suppliers, OEM's and partners, we will connect you with a huge marketplace that helps you get whatever you need, at the time you will need it.",
@@ -26,6 +28,16 @@
     "slide4Author": "Logistics Network",
     "slide4Role": "Fast & Reliable",
     "company": "Afrihorn"
+  },
+  "services": {
+    "subtitle": "Innovative solutions for maritime excellence",
+    "clickForMore": "Click for more info"
+  },
+  "markets": {
+    "subtitle": "Serving key maritime hubs across East Africa and the Arabian Gulf"
+  },
+  "contact": {
+    "subtitle": "Let's discuss your maritime needs"
   },
   "sections": {
     "1": {
@@ -217,6 +229,8 @@
   },
   "services": {
     "title": "Our Services",
+    "subtitle": "Innovative solutions for maritime excellence",
+    "clickForMore": "Click for more info",
     "port-operations": {
       "title": "Port Operations",
       "shortDesc": "Comprehensive services including vessel berthing, pilotage coordination, tug assistance, and cargo handling ensuring safe and efficient movements."
