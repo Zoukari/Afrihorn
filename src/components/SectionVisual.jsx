@@ -28,6 +28,7 @@ export function SectionVisual() {
             src="/0.png"
             alt="Afrihorn services - Port operations, Marine services, Shipyard and more"
             className={styles.img}
+            loading="lazy"
           />
         </motion.div>
       </div>

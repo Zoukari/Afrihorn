@@ -30,6 +30,7 @@ export function Footer() {
                 src="/logo-afrihorn.png"
                 alt="Afrihorn"
                 className={styles.logo}
+                loading="lazy"
               />
             </motion.a>
             <p className={styles.tagline}>

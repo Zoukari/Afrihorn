@@ -13,6 +13,7 @@ export function ServiceSection({ service, index }) {
           src={service.image}
           alt={t(`services.${service.id}.title`)}
           className={styles.bgImage}
+          loading="lazy"
           initial={{ scale: 1.2 }}
           whileInView={{ scale: 1 }}
           viewport={{ once: true }}
