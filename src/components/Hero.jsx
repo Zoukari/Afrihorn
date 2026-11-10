@@ -1,6 +1,10 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import styles from './Hero.module.css';
+import { PORTS } from '../data/geo';
+
+const fmt = ([lon, lat]) =>
+  `${Math.abs(lat).toFixed(2)}°${lat >= 0 ? 'N' : 'S'} ${Math.abs(lon).toFixed(2)}°${lon >= 0 ? 'E' : 'W'}`;
 
 function go(e, id) {
   e.preventDefault();
@@ -8,7 +12,7 @@ function go(e, id) {
 }
 
 export function Hero() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const reduce = useReducedMotion();
   const rise = (delay) => ({
     initial: reduce ? false : { opacity: 0, y: 28 },
@@ -45,6 +49,25 @@ export function Hero() {
             </a>
           </motion.div>
         </div>
+
+        <motion.a
+          href="#ports"
+          className={styles.ports}
+          onClick={(e) => go(e, 'ports')}
+          initial={reduce ? false : { opacity: 0, x: 24 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.9, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <span className={styles.portsTitle}>{t('portsSection.title')}</span>
+          <ul>
+            {PORTS.map((p) => (
+              <li key={p.id}>
+                <span className={styles.portName}>{p.city[lang] || p.city.en}</span>
+                <span className={styles.portCoord}>{fmt(p.coords)}</span>
+              </li>
+            ))}
+          </ul>
+        </motion.a>
       </div>
 
       <div className={styles.waterline} aria-hidden="true" />

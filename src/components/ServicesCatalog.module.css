@@ -197,3 +197,29 @@
   .body { padding: 20px; }
   .detailTitle { font-size: 1.7rem; }
 }
+
+/* ---- Fiche plus compacte ---- */
+.media { aspect-ratio: 16 / 6; }
+.body { padding: 22px 26px 24px; }
+.detailTitle { font-size: clamp(1.6rem, 2.4vw, 2rem); margin-bottom: 8px; }
+.desc { font-size: 0.95rem; line-height: 1.55; }
+.pointsLabel { margin: 18px 0 6px; font-size: 1rem; }
+.points li { padding: 8px 0 8px 14px; font-size: 0.85rem; }
+.points li::before { top: 14px; width: 6px; height: 6px; }
+.quote { margin-top: 18px; height: 44px; padding: 0 20px; font-size: 1rem; }
+
+@media (max-width: 900px) {
+  .media { aspect-ratio: 16 / 7; }
+  .body { padding: 16px 16px 18px; }
+  .detailTitle { font-size: 1.4rem; }
+  .desc { font-size: 0.9rem; line-height: 1.5; }
+  /* sur mobile on garde l'intitulé de chaque point, sans la phrase d'explication */
+  .points li { padding: 7px 0 7px 14px; }
+  .points li span { display: none; }
+  .points strong { margin: 0; font-size: 0.88rem; }
+  .points li::before { top: 13px; }
+  .quote { width: 100%; }
+  .stepper { margin: 10px 0 8px; }
+  .stepper button { width: 36px; height: 36px; }
+  .tab { height: 36px; padding: 0 14px; font-size: 1rem; }
+}

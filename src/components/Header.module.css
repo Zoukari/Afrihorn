@@ -4,176 +4,114 @@
   z-index: 100;
   color: #fff;
   background: linear-gradient(to bottom, rgba(13, 25, 34, 0.75), rgba(13, 25, 34, 0));
-  transition: background 0.25s ease, border-color 0.25s ease;
   border-bottom: 1px solid transparent;
+  transition: background 0.25s ease, border-color 0.25s ease;
 }
-
 .scrolled {
   background: var(--hull);
   border-bottom-color: var(--steel-2);
 }
 
 .inner {
+  position: relative;
   max-width: 1240px;
   margin: 0 auto;
   height: 64px;
   padding: 0 var(--gutter);
   display: flex;
   align-items: center;
-  gap: 32px;
+  justify-content: space-between;
 }
 
-.logoLink { display: flex; align-items: center; flex-shrink: 0; }
-.logoImg { height: 34px; width: auto; display: block; border-radius: 2px; }
+.logoLink { display: flex; align-items: center; }
+.logoImg { height: 34px; width: auto; display: block; border-radius: 4px; }
 
-.nav { margin-left: auto; }
-.navGroup { display: flex; gap: 4px; }
-
-.navLink {
-  position: relative;
-  background: none;
-  border: 0;
-  color: rgba(255, 255, 255, 0.82);
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  height: 42px;
+  padding: 0 14px 0 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 12px;
+  color: #fff;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.toggle:hover { border-color: #fff; }
+.toggle[aria-expanded='true'] { background: var(--signal); border-color: var(--signal); }
+.toggleLabel {
   font-family: var(--font-heading);
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.05rem;
+  font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  padding: 8px 12px;
-  cursor: pointer;
-  transition: color 0.15s;
 }
-.navLink::after {
-  content: '';
-  position: absolute;
-  left: 12px; right: 12px; bottom: 2px;
-  height: 2px;
-  background: var(--signal);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.2s ease;
-}
-.navLink:hover { color: #fff; }
-.navLink:hover::after { transform: scaleX(1); }
 
-.call {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  height: 40px;
-  padding: 0 16px;
-  background: var(--signal);
-  color: #fff;
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 1rem;
-  letter-spacing: 0.03em;
-  white-space: nowrap;
-  transition: background 0.15s;
-}
-.call:hover { background: var(--signal-dark); }
-
-.burger {
-  display: none;
-  width: 44px; height: 44px;
-  background: none; border: 0; padding: 0 10px;
-  flex-direction: column; justify-content: center; gap: 6px;
-  cursor: pointer;
-}
+.burger { display: flex; flex-direction: column; gap: 4px; width: 20px; }
 .burger span { display: block; height: 2px; background: #fff; transition: transform 0.2s, opacity 0.2s; }
-.burger .burgerOpen:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-.burger .burgerOpen:nth-child(2) { opacity: 0; }
-.burger .burgerOpen:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+.burgerOpen span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.burgerOpen span:nth-child(2) { opacity: 0; }
+.burgerOpen span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
-.mobileMenu {
-  overflow: hidden;
-  background: var(--hull);
-  border-top: 1px solid var(--steel-2);
-  display: flex;
-  flex-direction: column;
-  padding: 0 var(--gutter);
-}
-.mobileNavLink {
-  background: none; border: 0;
-  border-bottom: 1px solid var(--steel-2);
-  color: #fff;
-  text-align: left;
-  font-family: var(--font-heading);
-  font-size: 1.4rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  padding: 16px 0;
-  cursor: pointer;
-}
-.mobileNavLink:last-child { border-bottom: 0; }
-
-@media (max-width: 960px) {
-  .nav { display: none; }
-  .call { margin-left: auto; }
-  .burger { display: flex; }
-}
-@media (max-width: 480px) {
-  .call span { display: none; }
-  .call { width: 40px; padding: 0; justify-content: center; }
-}
-
-.lang { position: relative; flex-shrink: 0; }
-.langBtn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  height: 40px;
-  padding: 0 12px;
-  background: transparent;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 10px;
-  font-family: var(--font-heading);
-  font-size: 1rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-.langBtn:hover { border-color: #fff; }
-.langMenu {
+.menu {
   position: absolute;
   top: calc(100% + 8px);
-  right: 0;
-  min-width: 140px;
-  list-style: none;
-  margin: 0;
-  padding: 6px;
+  right: var(--gutter);
+  width: min(340px, calc(100vw - 2 * var(--gutter)));
+  padding: 8px;
   background: var(--hull);
   border: 1px solid var(--steel-2);
-  border-radius: 12px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  border-top: 3px solid var(--signal);
+  border-radius: 6px 6px 16px 16px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
 }
-.langMenu button {
+
+.links { list-style: none; margin: 0; padding: 0; }
+.links button {
   width: 100%;
   text-align: left;
   background: none;
   border: 0;
-  border-radius: 8px;
+  border-radius: 10px;
   color: #fff;
-  padding: 10px 12px;
-  font: inherit;
-  font-size: 0.95rem;
+  padding: 12px 14px;
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-transform: uppercase;
   cursor: pointer;
+  transition: background 0.12s;
 }
-.langMenu button:hover { background: rgba(255, 255, 255, 0.06); }
-.langMenu .langActive { background: var(--signal); }
-.langMenu .langActive:hover { background: var(--signal); }
+.links button:hover { background: rgba(255, 255, 255, 0.06); }
 
-/* Boutons arrondis */
-.call { border-radius: 10px; }
-.logoImg { border-radius: 4px; }
-
-@media (max-width: 960px) {
-  .lang { margin-left: auto; }
-  .call { margin-left: 0; }
-  .inner { gap: 10px; }
+.langs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-top: 8px;
+  padding-top: 10px;
+  border-top: 1px solid var(--steel-2);
 }
+.langs button {
+  height: 40px;
+  border: 1px solid var(--steel-2);
+  border-radius: 10px;
+  background: none;
+  color: var(--cable);
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+.langs button:hover { color: #fff; }
+.langs .langActive { background: var(--signal); border-color: var(--signal); color: #fff; }
+
 @media (max-width: 480px) {
   .inner { height: 60px; }
   .logoImg { height: 30px; }
-  .langBtn, .call, .burger { height: 40px; }
+  .toggleLabel { display: none; }
+  .toggle { padding: 0 11px; }
 }
