@@ -6,6 +6,7 @@ import { Intro } from './components/Intro';
 import { Markets } from './components/Markets';
 import { ServicesSection } from './components/ServicesSection';
 import { Contact } from './components/Contact';
+import { Ports } from './components/Ports';
 import { Footer } from './components/Footer';
 import { FloatingActions } from './components/FloatingActions';
 import './App.css';
@@ -21,6 +22,7 @@ export default function App() {
           <Markets />
           <ServicesSection />
           <Contact />
+          <Ports />
         </main>
         <Footer />
         <FloatingActions />

@@ -1,28 +1,40 @@
 :root {
-  /* Premium maritime design */
-  --color-accent: #e91e63;
-  --color-accent-hover: #c2185b;
+  /* Afrihorn — palette industrielle */
+  --hull: #0D1922;        /* coque, fonds sombres */
+  --steel: #16242F;       /* panneaux */
+  --steel-2: #1E2F3B;     /* bordures sur sombre */
+  --cable: #7E909C;       /* texte secondaire sur sombre */
+  --concrete: #E6E9EB;    /* fonds clairs */
+  --concrete-2: #D3D9DD;  /* bordures sur clair */
+  --ink: #0D1922;
+  --ink-muted: #46576A;
+  --signal: #E8175D;      /* rose de la marque */
+  --signal-dark: #C3104C;
+
+  --color-accent: var(--signal);
+  --color-accent-hover: var(--signal-dark);
   --color-accent-secondary: #f06292;
-  --color-hero-bg: #001219;
-  --color-bg: #ffffff;
-  --color-bg-soft: #f8f9fa;
-  --color-footer-bg: #001219;
-  --color-text: #001219;
-  --color-text-muted: #495057;
+  --color-hero-bg: var(--hull);
+  --color-bg: var(--concrete);
+  --color-bg-soft: #F2F4F5;
+  --color-footer-bg: var(--hull);
+  --color-text: var(--ink);
+  --color-text-muted: var(--ink-muted);
   --color-text-light: #ffffff;
-  --color-border: #dee2e6;
-  --color-overlay: rgba(0, 18, 25, 0.6);
-  /* Heading sizes - reduced for better balance */
-  --h1-size: clamp(2rem, 5vw, 3.25rem);
-  --h2-size: clamp(1.75rem, 4vw, 2.5rem);
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-xl: 32px;
-  /* Fonts */
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-heading: 'Oswald', 'Impact', sans-serif;
-  
+  --color-border: var(--concrete-2);
+  --color-overlay: rgba(13, 25, 34, 0.6);
+  --h1-size: clamp(2.75rem, 6.5vw, 5.5rem);
+  --h2-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+  --gutter: clamp(16px, 4vw, 48px);
+  --hatch: repeating-linear-gradient(-45deg, var(--signal) 0 6px, transparent 6px 12px);
+
+  --font-body: 'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+
   font-family: var(--font-body);
   line-height: 1.6;
   font-weight: 400;
@@ -36,9 +48,14 @@
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+
+:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 3px;
 }
 
 *,
@@ -69,7 +86,7 @@ body {
 
 /* Section scroll margin for fixed header */
 section[id] {
-  scroll-margin-top: 70px;
+  scroll-margin-top: 64px;
 }
 
 a {

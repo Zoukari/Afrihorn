@@ -8,7 +8,10 @@
   "hero": {
     "tagline": "Premium Maritime Solutions",
     "subtitle": "Delivering excellence in port operations, marine equipment, and supply chain solutions across East Africa and the Arabian Gulf",
-    "cta": "Explore Our Services"
+    "cta": "See our services",
+    "kicker": "UAE-based supplier for East Africa, the Red Sea and the Gulf",
+    "title": "Port, marine and rail equipment, delivered where you operate",
+    "call": "Call us"
   },
   "intro": {
     "title": "About Afrihorn",
@@ -80,7 +83,10 @@
     "consultancies-research": {
       "title": "Consultancies & Research",
       "shortDesc": "Expert advice on port operations, market research, feasibility studies, and business strategy development."
-    }
+    },
+    "listLabel": "12 service lines",
+    "quote": "Request a quote",
+    "keyPoints": "What we cover"
   },
   "markets": {
     "title": "Our Markets & Clients",
@@ -133,7 +139,10 @@
       "mogadishu": "Mogadishu Port (Somalia)",
       "berbera": "Berbera Port (Somaliland)",
       "port-sudan": "Port Sudan (Sudan)"
-    }
+    },
+    "globeHint": "Select a region to locate it on the globe",
+    "hq": "Head office",
+    "countries": "Countries"
   },
   "contact": {
     "title": "Contact us",
@@ -292,5 +301,10 @@
   },
   "footer": {
     "copyright": "© klikall. All rights reserved."
+  },
+  "portsSection": {
+    "title": "Major ports served",
+    "subtitle": "Our teams and partners on the ground",
+    "placeholder": "Contact details coming soon"
   }
 }

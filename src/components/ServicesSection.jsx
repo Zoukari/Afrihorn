@@ -1,5 +1,5 @@
-import { ServicesMarquee } from './ServicesMarquee';
+import { ServicesCatalog } from './ServicesCatalog';
 
 export function ServicesSection() {
-  return <ServicesMarquee />;
+  return <ServicesCatalog />;
 }

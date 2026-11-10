@@ -10,7 +10,6 @@ import { useLanguage } from '../context/LanguageContext';
 import { RadiantText } from './RadiantText';
 import { SectionTitle } from './SectionTitle';
 import styles from './Intro.module.css';
-import lightStyles from './SectionTitleLight.module.css';
 
 const DURATION = 6000;
 
@@ -103,11 +102,9 @@ export function Intro() {
 
   return (
     <section className={styles.section} id="about">
-      <div className={lightStyles.lightSubtitle}>
-        <SectionTitle subtitle={t('intro.subtitle')}>
-          {t('intro.sectionTitle')}
-        </SectionTitle>
-      </div>
+      <SectionTitle subtitle={t('intro.subtitle')}>
+        {t('intro.sectionTitle')}
+      </SectionTitle>
       <div
         ref={containerRef}
         className={styles.container}

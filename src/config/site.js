@@ -3,10 +3,10 @@
 export const SITE = {
   // Numéro WhatsApp au format international, chiffres uniquement (ex. '971501234567').
   // Vide = boutons WhatsApp masqués.
-  whatsapp: '',
+  whatsapp: '971505955616',
 
   // Numéro affiché dans la section Contact (ex. '+971 50 123 4567'). Vide = masqué.
-  phone: '',
+  phone: '+971 50 595 5616',
 
   // Email principal (affiché + destinataire du formulaire en mode secours).
   email: 'contact@afrihorn.com',

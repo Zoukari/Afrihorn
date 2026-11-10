@@ -8,7 +8,10 @@
   "hero": {
     "tagline": "Solutions Maritimes Premium",
     "subtitle": "Excellence en opérations portuaires, équipements marins et solutions logistiques en Afrique de l'Est et dans le Golfe Arabique",
-    "cta": "Découvrir Nos Services"
+    "cta": "Voir nos services",
+    "kicker": "Fournisseur basé aux Émirats pour l’Afrique de l’Est, la mer Rouge et le Golfe",
+    "title": "Équipements portuaires, maritimes et ferroviaires, livrés là où vous opérez",
+    "call": "Nous appeler"
   },
   "intro": {
     "title": "À propos d'Afrihorn",
@@ -80,7 +83,10 @@
     "consultancies-research": {
       "title": "Conseil & Études",
       "shortDesc": "Conseil expert en opérations portuaires, études de marché, faisabilité et stratégie commerciale."
-    }
+    },
+    "listLabel": "12 domaines d’intervention",
+    "quote": "Demander un devis",
+    "keyPoints": "Ce que nous couvrons"
   },
   "markets": {
     "title": "Nos Marchés & Clients",
@@ -133,7 +139,10 @@
       "mogadishu": "Port de Mogadiscio (Somalie)",
       "berbera": "Port de Berbera (Somaliland)",
       "port-sudan": "Port-Soudan (Soudan)"
-    }
+    },
+    "globeHint": "Choisissez une région pour la situer sur le globe",
+    "hq": "Siège",
+    "countries": "Pays"
   },
   "contact": {
     "title": "Contactez-nous",
@@ -292,5 +301,10 @@
   },
   "footer": {
     "copyright": "© klikall. Tous droits réservés."
+  },
+  "portsSection": {
+    "title": "Principaux ports desservis",
+    "subtitle": "Nos équipes et partenaires sur place",
+    "placeholder": "Coordonnées bientôt disponibles"
   }
 }

@@ -1,28 +1,21 @@
-import { motion } from 'framer-motion';
 import styles from './SectionTitle.module.css';
 
-export function SectionTitle({ children, subtitle }) {
+/**
+ * Titre de section industriel : bloc hachuré (motif du logo) + titre condensé,
+ * aligné à gauche. `tone="dark"` pour les sections sur fond sombre.
+ */
+export function SectionTitle({ children, subtitle, tone = 'light', aside }) {
   return (
-    <div className={styles.container}>
-      <motion.h2
-        className={styles.title}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        {children}
-      </motion.h2>
-      {subtitle && (
-        <motion.p
-          className={styles.subtitle}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          {subtitle}
-        </motion.p>
+    <div className={`${styles.container} ${tone === 'dark' ? styles.dark : ''}`}>
+      <div className={styles.head}>
+        <span className={styles.hatch} aria-hidden="true" />
+        <h2 className={styles.title}>{children}</h2>
+      </div>
+      {(subtitle || aside) && (
+        <div className={styles.sub}>
+          {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
+          {aside}
+        </div>
       )}
     </div>
   );

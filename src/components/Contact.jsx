@@ -1,25 +1,27 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { RadiantText } from './RadiantText';
-import { InteractiveHoverButton } from './InteractiveHoverButton';
 import { SectionTitle } from './SectionTitle';
 import styles from './Contact.module.css';
-import lightStyles from './SectionTitleLight.module.css';
 import { SITE, whatsappLink } from '../config/site';
 
-const formItem = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] }
-  }
-};
+const tel = (n) => `tel:${n.replace(/\s/g, '')}`;
 
 export function Contact() {
   const { t } = useLanguage();
   const [status, setStatus] = useState('idle'); // idle | sending | sent | error
+  const messageRef = useRef(null);
+
+  // « Demander un devis » depuis la section Services : pré-remplit le message.
+  useEffect(() => {
+    const onQuote = (e) => {
+      const el = messageRef.current;
+      if (!el) return;
+      el.value = `${t('services.quote')} : ${e.detail}\n\n`;
+      setTimeout(() => el.focus({ preventScroll: true }), 600);
+    };
+    window.addEventListener('afrihorn:quote', onQuote);
+    return () => window.removeEventListener('afrihorn:quote', onQuote);
+  }, [t]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -51,108 +53,70 @@ export function Contact() {
 
   const waLink = whatsappLink(t('contact.whatsappPrefill'));
 
-  const fields = [
-    { name: 'name', type: 'text', label: t('contact.name'), required: true },
-    { name: 'email', type: 'email', label: t('contact.email'), required: true },
-    { name: 'company', type: 'text', label: t('contact.company'), required: false },
-    { name: 'message', textarea: true, label: t('contact.message'), required: true, placeholder: t('contact.messagePlaceholder') }
-  ];
-
   return (
     <section id="contact" className={styles.section}>
-      <div className={lightStyles.lightSubtitle}>
-        <SectionTitle>
-          {t('nav.contact')}
-        </SectionTitle>
-      </div>
-      <div className={styles.container}>
-        {/* Left column: icon, title, intro, contact details, map */}
-        <motion.div
-          className={styles.leftCol}
-          initial={{ opacity: 0, x: -24 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className={styles.iconBox}>
-            <svg className={styles.envelopeIcon} width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <rect width="20" height="16" x="2" y="4" rx="2" />
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-            </svg>
-          </div>
-          <h2 className={styles.title}>
-            <RadiantText duration={5} as="span">
-              {t('contact.title')}
-            </RadiantText>
-          </h2>
-          <p className={styles.intro}>{t('contact.intro')}</p>
-          <div className={styles.contactLine}>
-            {[
-              SITE.email && <a key="e" href={`mailto:${SITE.email}`}>{SITE.email}</a>,
-              SITE.phone && <a key="p" href={`tel:${SITE.phone.replace(/\s/g, '')}`}>{SITE.phone}</a>,
-              SITE.supportEmail && <a key="s" href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>,
-            ]
-              .filter(Boolean)
-              .flatMap((el, i) => (i ? [<span key={`b${i}`} className={styles.bullet}>•</span>, el] : [el]))}
-          </div>
-        </motion.div>
+      <SectionTitle subtitle={t('contact.intro')}>{t('nav.contact')}</SectionTitle>
 
-        {/* Right column: form with grid pattern */}
-        <motion.div
-          className={styles.rightCol}
-          initial={{ opacity: 0, x: 24 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <motion.form
-            className={styles.form}
-            onSubmit={handleSubmit}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-40px' }}
-            variants={{ visible: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } } }}
-          >
-            {fields.map((field) => (
-              <motion.label key={field.name} className={styles.label} variants={formItem}>
-                <span>{field.label}</span>
-                {field.textarea ? (
-                  <textarea
-                    name={field.name}
-                    rows={5}
-                    required={field.required}
-                    placeholder={field.placeholder}
-                    className={styles.textarea}
-                  />
-                ) : (
-                  <input
-                    type={field.type}
-                    name={field.name}
-                    required={field.required}
-                    className={styles.input}
-                  />
-                )}
-              </motion.label>
-            ))}
-            <motion.div className={styles.formActions} variants={formItem}>
-              <InteractiveHoverButton
-                type="submit"
-                disabled={status === 'sending'}
-                className={styles.submitBtn}
-              >
-                {status === 'sending' ? '...' : status === 'sent' ? `✓ ${t('contact.sent')}` : t('contact.sendEmail')}
-              </InteractiveHoverButton>
-              {waLink && (
-                <a href={waLink} target="_blank" rel="noopener noreferrer" className={styles.whatsappBtn}>
-                  {t('contact.sendWhatsApp')}
-                </a>
-              )}
-            </motion.div>
-            {status === 'error' && (
-              <p role="alert" className={styles.formError}>{t('contact.error')}</p>
+      <div className={styles.container}>
+        <aside className={styles.info}>
+          <dl className={styles.lines}>
+            <div>
+              <dt>{t('markets.hq')}</dt>
+              <dd>{t('contact.address')}</dd>
+            </div>
+            {SITE.phone && (
+              <div>
+                <dt>{t('contact.phoneLabel')}</dt>
+                <dd><a href={tel(SITE.phone)}>{SITE.phone}</a></dd>
+              </div>
             )}
-          </motion.form>
-        </motion.div>
+            {SITE.email && (
+              <div>
+                <dt>{t('contact.emailLabel')}</dt>
+                <dd><a href={`mailto:${SITE.email}`}>{SITE.email}</a></dd>
+              </div>
+            )}
+            {SITE.supportEmail && (
+              <div>
+                <dt>Support</dt>
+                <dd><a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a></dd>
+              </div>
+            )}
+          </dl>
+          {waLink && (
+            <a href={waLink} target="_blank" rel="noopener noreferrer" className={styles.whatsapp}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.85 9.85 0 0 0 12.04 2Zm5.8 14.06c-.24.68-1.42 1.32-1.96 1.38-.5.06-1.13.09-1.83-.12-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.18-4.94-4.37-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.1.19-.14.31-.29.48l-.43.5c-.14.14-.29.3-.13.59.17.29.74 1.22 1.59 1.97 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.19.72-.84.92-1.13.19-.29.38-.24.65-.14.27.1 1.7.8 1.99.95.29.14.48.22.55.34.07.12.07.7-.17 1.38Z"/></svg>
+              WhatsApp {SITE.phone}
+            </a>
+          )}
+        </aside>
+
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <div className={styles.row}>
+            <label className={styles.field}>
+              <span>{t('contact.name')}</span>
+              <input name="name" type="text" required autoComplete="name" />
+            </label>
+            <label className={styles.field}>
+              <span>{t('contact.email')}</span>
+              <input name="email" type="email" required autoComplete="email" />
+            </label>
+          </div>
+          <label className={styles.field}>
+            <span>{t('contact.company')}</span>
+            <input name="company" type="text" autoComplete="organization" />
+          </label>
+          <label className={styles.field}>
+            <span>{t('contact.message')}</span>
+            <textarea ref={messageRef} name="message" rows={6} required placeholder={t('contact.messagePlaceholder')} />
+          </label>
+          <div className={styles.actions}>
+            <button type="submit" className={styles.submit} disabled={status === 'sending'}>
+              {status === 'sending' ? '…' : status === 'sent' ? `✓ ${t('contact.sent')}` : t('contact.sendEmail')}
+            </button>
+          </div>
+          {status === 'error' && <p role="alert" className={styles.error}>{t('contact.error')}</p>}
+        </form>
       </div>
     </section>
   );

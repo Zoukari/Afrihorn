@@ -315,3 +315,53 @@
     animation: none;
   }
 }
+
+/* ---- Version compacte ---- */
+.section {
+  min-height: 0;
+  padding: 0 0 clamp(48px, 6vw, 72px);
+  background: var(--concrete);
+}
+.container { max-width: 1240px; padding: 0 var(--gutter); }
+.bigNumber {
+  font-family: var(--font-heading);
+  font-size: clamp(6rem, 13vw, 11rem);
+  font-weight: 800;
+  opacity: 0.06;
+}
+.leftCol { padding-right: 2.5rem; }
+.progressTrack { height: 5rem; }
+.progressFill { background: var(--signal); }
+.centerCol { padding: 1rem 0 1rem 2.5rem; max-width: 860px; }
+.badge {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 0;
+}
+.quoteWrap { min-height: 7.5rem; }
+.quote {
+  font-size: clamp(1.15rem, 1.9vw, 1.55rem);
+  line-height: 1.4;
+  font-weight: 500;
+}
+.authorName { font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; }
+.navBtn { height: 3rem; width: 3rem; border-radius: 0; }
+.navBtnFill { border-radius: 0; }
+.tickerWrap { margin-top: 2rem; }
+.ticker { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; }
+
+@media (max-width: 900px) {
+  .bigNumber { font-size: 6rem; }
+  .quote { font-size: 1.15rem; }
+}
+@media (max-width: 640px) {
+  .section { padding: 0 0 48px; }
+  .centerCol { padding: 0; }
+  .quoteWrap { min-height: 9rem; }
+  .ticker { font-size: 1.25rem; }
+}
+@media (max-width: 640px) {
+  .leftCol { display: none; }
+  .bigNumber { display: none; }
+}

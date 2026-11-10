@@ -1,115 +1,70 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
-import { RadiantText } from './RadiantText';
-import { InteractiveHoverButton } from './InteractiveHoverButton';
 import styles from './Hero.module.css';
+
+// Marques de tirant d'eau, comme peintes sur l'étrave d'un navire.
+const DRAFT = [14, 12, 10, 8, 6, 4, 2];
+
+function go(e, id) {
+  e.preventDefault();
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+}
 
 export function Hero() {
   const { t } = useLanguage();
+  const reduce = useReducedMotion();
+  const rise = (delay) => ({
+    initial: reduce ? false : { opacity: 0, y: 28 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] },
+  });
 
   return (
-    <section className={styles.hero} aria-label="Hero">
-      <div className={styles.bg}>
-        <motion.div
-          className={styles.gradient}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.2 }}
-        />
-        <motion.div
-          className={styles.shapes}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.3 }}
-        >
-          <div className={styles.shape1} />
-          <div className={styles.shape2} />
-          <div className={styles.shape3} />
-        </motion.div>
-        <div className={styles.particles}>
-          {[...Array(20)].map((_, i) => (
-            <div key={i} className={styles.particle} style={{ '--i': i }} />
-          ))}
-        </div>
-      </div>
+    <section className={styles.hero} aria-label="Afrihorn">
+      <div className={styles.bg} aria-hidden="true" />
+      <div className={styles.shade} aria-hidden="true" />
 
-      <div className={styles.content}>
-        <motion.div
-          className={styles.logoWrap}
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-        >
-          <img
-            src="/logo-afrihorn.png"
-            alt="Afrihorn"
-            className={styles.logo}
-          />
-        </motion.div>
+      <div className={styles.inner}>
+        <div className={styles.content}>
+          <motion.p className={styles.kicker} {...rise(0.1)}>
+            <span className={styles.kickerBar} aria-hidden="true" />
+            {t('hero.kicker')}
+          </motion.p>
 
-        <motion.h1
-          className={styles.tagline}
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <RadiantText variant="light" duration={5} as="span">
-            {t('hero.tagline')}
-          </RadiantText>
-        </motion.h1>
+          <motion.h1 className={styles.title} {...rise(0.2)}>
+            {t('hero.title')}
+          </motion.h1>
 
-        <motion.p
-          className={styles.subtitle}
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <RadiantText variant="light" duration={6} radiantWidth={120} as="span">
+          <motion.p className={styles.subtitle} {...rise(0.35)}>
             {t('hero.subtitle')}
-          </RadiantText>
-        </motion.p>
+          </motion.p>
 
-        <motion.div
-          className={styles.ctaWrap}
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          <motion.div className={styles.actions} {...rise(0.5)}>
+            <a href="#services" className={styles.primary} onClick={(e) => go(e, 'services')}>
+              {t('hero.cta')}
+            </a>
+            <a href="#contact" className={styles.secondary} onClick={(e) => go(e, 'contact')}>
+              {t('nav.contact')}
+            </a>
+          </motion.div>
+        </div>
+
+        <motion.ol
+          className={styles.draft}
+          aria-hidden="true"
+          initial={reduce ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2, delay: 0.6 }}
         >
-          <InteractiveHoverButton
-            as="a"
-            href="#services"
-            variant="primary"
-            className={styles.ctaHero}
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            {t('hero.cta')}
-          </InteractiveHoverButton>
-          <InteractiveHoverButton
-            as="a"
-            href="#contact"
-            variant="secondary"
-            className={styles.ctaHero}
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            {t('nav.contact')}
-          </InteractiveHoverButton>
-        </motion.div>
+          {DRAFT.map((m) => (
+            <li key={m}>
+              <span>{m}</span>M
+            </li>
+          ))}
+        </motion.ol>
       </div>
 
-      <motion.div
-        className={styles.scrollHint}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-      >
-        <span className={styles.scrollLine} />
-      </motion.div>
+      <div className={styles.waterline} aria-hidden="true" />
     </section>
   );
 }
