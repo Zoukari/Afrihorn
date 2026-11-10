@@ -1,8 +1,49 @@
-.whatsapp {
+.dock {
   position: fixed;
   right: 20px;
   bottom: calc(20px + env(safe-area-inset-bottom));
   z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lang {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 42px);
+  height: 44px;
+  padding: 4px;
+  background: var(--hull);
+  border: 1px solid var(--steel-2);
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(13, 25, 34, 0.35);
+}
+.thumb {
+  position: absolute;
+  top: 4px; bottom: 4px; left: 4px;
+  width: 42px;
+  border-radius: 999px;
+  background: var(--signal);
+  transform: translateX(calc(var(--i, 0) * 42px));
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.lang button {
+  position: relative;
+  z-index: 1;
+  background: none;
+  border: 0;
+  color: rgba(255, 255, 255, 0.65);
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.lang button:hover { color: #fff; }
+.lang .on { color: #fff; }
+
+.whatsapp {
   width: 54px;
   height: 54px;
   display: grid;
@@ -16,5 +57,8 @@
 .whatsapp:hover { background: #188a49; transform: translateY(-2px); }
 
 @media (max-width: 640px) {
-  .whatsapp { width: 48px; height: 48px; right: 14px; bottom: calc(14px + env(safe-area-inset-bottom)); border-radius: 14px; }
+  .dock { right: 14px; bottom: calc(14px + env(safe-area-inset-bottom)); gap: 8px; }
+  .lang { grid-template-columns: repeat(3, 38px); height: 42px; }
+  .thumb { width: 38px; transform: translateX(calc(var(--i, 0) * 38px)); }
+  .whatsapp { width: 48px; height: 48px; border-radius: 14px; }
 }

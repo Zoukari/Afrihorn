@@ -3,32 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import styles from './Header.module.css';
 
-const LANGS = ['en', 'fr', 'ar'];
-
 function scrollToSection(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
-function LangToggle() {
-  const { lang, setLanguage } = useLanguage();
-  const i = LANGS.indexOf(lang);
-  return (
-    <div className={styles.lang} role="radiogroup" aria-label="Language" style={{ '--i': i }}>
-      <span className={styles.langThumb} aria-hidden="true" />
-      {LANGS.map((code) => (
-        <button
-          key={code}
-          type="button"
-          role="radio"
-          aria-checked={lang === code}
-          className={lang === code ? styles.langOn : ''}
-          onClick={() => setLanguage(code)}
-        >
-          {code.toUpperCase()}
-        </button>
-      ))}
-    </div>
-  );
 }
 
 export function Header() {
@@ -81,8 +57,6 @@ export function Header() {
             </button>
           ))}
         </nav>
-
-        <LangToggle />
 
         <button
           type="button"
