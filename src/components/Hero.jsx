@@ -2,9 +2,6 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import styles from './Hero.module.css';
 
-// Marques de tirant d'eau, comme peintes sur l'étrave d'un navire.
-const DRAFT = [14, 12, 10, 8, 6, 4, 2];
-
 function go(e, id) {
   e.preventDefault();
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
@@ -48,20 +45,6 @@ export function Hero() {
             </a>
           </motion.div>
         </div>
-
-        <motion.ol
-          className={styles.draft}
-          aria-hidden="true"
-          initial={reduce ? false : { opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, delay: 0.6 }}
-        >
-          {DRAFT.map((m) => (
-            <li key={m}>
-              <span>{m}</span>M
-            </li>
-          ))}
-        </motion.ol>
       </div>
 
       <div className={styles.waterline} aria-hidden="true" />

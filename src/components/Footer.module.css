@@ -1,8 +1,7 @@
 .footer {
   background: #08121A;
   color: var(--cable);
-  border-top: 6px solid transparent;
-  border-image: var(--hatch) 6;
+  border-top: 3px solid var(--signal);
 }
 .inner {
   max-width: 1240px;
