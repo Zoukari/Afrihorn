@@ -3,21 +3,39 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import styles from './Header.module.css';
 
-const LANGS = [
-  ['en', 'English'],
-  ['fr', 'Français'],
-  ['ar', 'العربية'],
-];
+const LANGS = ['en', 'fr', 'ar'];
 
 function scrollToSection(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
+function LangToggle() {
+  const { lang, setLanguage } = useLanguage();
+  const i = LANGS.indexOf(lang);
+  return (
+    <div className={styles.lang} role="radiogroup" aria-label="Language" style={{ '--i': i }}>
+      <span className={styles.langThumb} aria-hidden="true" />
+      {LANGS.map((code) => (
+        <button
+          key={code}
+          type="button"
+          role="radio"
+          aria-checked={lang === code}
+          className={lang === code ? styles.langOn : ''}
+          onClick={() => setLanguage(code)}
+        >
+          {code.toUpperCase()}
+        </button>
+      ))}
+    </div>
+  );
+}
+
 export function Header() {
-  const { t, lang, setLanguage } = useLanguage();
+  const { t } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const menuRef = useRef(null);
+  const ref = useRef(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -26,10 +44,9 @@ export function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Fermeture au clic extérieur et avec Échap
   useEffect(() => {
     if (!menuOpen) return;
-    const onDown = (e) => { if (!menuRef.current?.contains(e.target)) setMenuOpen(false); };
+    const onDown = (e) => { if (!ref.current?.contains(e.target)) setMenuOpen(false); };
     const onKey = (e) => { if (e.key === 'Escape') setMenuOpen(false); };
     document.addEventListener('pointerdown', onDown);
     document.addEventListener('keydown', onKey);
@@ -47,8 +64,8 @@ export function Header() {
   ];
 
   return (
-    <header className={`${styles.header} ${scrolled || menuOpen ? styles.scrolled : ''}`}>
-      <div className={styles.inner} ref={menuRef}>
+    <header className={`${styles.header} ${scrolled || menuOpen ? styles.scrolled : ''}`} ref={ref}>
+      <div className={styles.inner}>
         <a
           href="#"
           className={styles.logoLink}
@@ -57,59 +74,53 @@ export function Header() {
           <img src="/logo-afrihorn.png" alt="Afrihorn" className={styles.logoImg} />
         </a>
 
+        <nav className={styles.nav}>
+          {navItems.map((item) => (
+            <button key={item.id} type="button" className={styles.navLink} onClick={() => scrollToSection(item.id)}>
+              {item.label}
+            </button>
+          ))}
+        </nav>
+
+        <LangToggle />
+
         <button
           type="button"
-          className={styles.toggle}
+          className={styles.burger}
           onClick={() => setMenuOpen((o) => !o)}
           aria-expanded={menuOpen}
-          aria-controls="site-menu"
+          aria-controls="mobile-menu"
+          aria-label="Menu"
         >
-          <span className={styles.toggleLabel}>Menu</span>
-          <span className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ''}`} aria-hidden="true">
-            <span /><span /><span />
+          <span className={menuOpen ? styles.burgerOpen : ''} aria-hidden="true">
+            <i /><i /><i />
           </span>
         </button>
-
-        <AnimatePresence>
-          {menuOpen && (
-            <motion.nav
-              id="site-menu"
-              className={styles.menu}
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.18 }}
-            >
-              <ul className={styles.links}>
-                {navItems.map((item) => (
-                  <li key={item.id}>
-                    <button
-                      type="button"
-                      onClick={() => { scrollToSection(item.id); setMenuOpen(false); }}
-                    >
-                      {item.label}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-
-              <div className={styles.langs} role="group" aria-label="Language">
-                {LANGS.map(([code, name]) => (
-                  <button
-                    key={code}
-                    type="button"
-                    aria-pressed={lang === code}
-                    className={lang === code ? styles.langActive : ''}
-                    onClick={() => { setLanguage(code); setMenuOpen(false); }}
-                  >
-                    {name}
-                  </button>
-                ))}
-              </div>
-            </motion.nav>
-          )}
-        </AnimatePresence>
       </div>
+
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.nav
+            id="mobile-menu"
+            className={styles.mobileMenu}
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                type="button"
+                className={styles.mobileLink}
+                onClick={() => { scrollToSection(item.id); setMenuOpen(false); }}
+              >
+                {item.label}
+              </button>
+            ))}
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
