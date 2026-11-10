@@ -228,3 +228,9 @@
 .whatsappBtn:hover {
   box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
 }
+
+.formError {
+  margin: 0.75rem 0 0;
+  color: #e11d48;
+  font-size: 0.9rem;
+}

@@ -32,7 +32,7 @@
   position: relative;
   background-image:
     linear-gradient(135deg, rgba(10, 16, 40, 0.94), rgba(25, 25, 60, 0.92)),
-    url('/0.png');
+    url('/0.jpg');
   background-size: cover;
   background-position: var(--service-bg-pos);
   background-repeat: no-repeat;

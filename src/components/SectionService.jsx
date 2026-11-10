@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import styles from './SectionService.module.css';
 
-// Map each section to a different crop of the services visual (0.png)
+// Map each section to a different crop of the services visual (0.jpg)
 const bgPositions = {
   1: '10% 10%',
   2: '50% 10%',

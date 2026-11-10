@@ -76,7 +76,7 @@ export function Intro() {
       setActiveIndex((prev) => (prev + 1) % testimonials.length);
     }, DURATION);
     return () => clearInterval(timer);
-  }, []);
+  }, [testimonials.length]);
 
   const current = testimonials[activeIndex];
   const paddedIndex = String(activeIndex + 1).padStart(2, '0');

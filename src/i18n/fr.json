@@ -30,14 +30,130 @@
     "company": "Afrihorn"
   },
   "services": {
+    "title": "Nos Services",
     "subtitle": "Des solutions innovantes pour l'excellence maritime",
-    "clickForMore": "Cliquez pour plus d'infos"
+    "clickForMore": "Cliquez pour plus d'infos",
+    "port-operations": {
+      "title": "Opérations Portuaires",
+      "shortDesc": "Services complets incluant accostage, pilotage, remorquage et manutention pour assurer sécurité et efficacité."
+    },
+    "marine-services": {
+      "title": "Services Maritimes",
+      "shortDesc": "Bunkering, eau douce, réception des déchets, avitaillement et réponse d'urgence pour maintenir les navires opérationnels."
+    },
+    "shipyard-operations": {
+      "title": "Chantier Naval",
+      "shortDesc": "Réparations à flot et en cale sèche, maintenance de routine, nettoyage de coque et réparations structurelles."
+    },
+    "docking-berthing": {
+      "title": "Support Accostage & Mouillage",
+      "shortDesc": "Fourniture et maintenance de défenses, bollards, équipements d'amarrage et systèmes de guidage."
+    },
+    "engineering-fabrication": {
+      "title": "Ingénierie & Fabrication",
+      "shortDesc": "Travaux d'acier marin, tuyauterie, usinage et solutions de rénovation avec matériaux certifiés marine."
+    },
+    "safety-compliance": {
+      "title": "Sécurité, Conformité & Inspection",
+      "shortDesc": "Audits de sécurité, inspections, tests CND et conformité IMO, SOLAS et MARPOL."
+    },
+    "equipment-supply": {
+      "title": "Équipements Portuaires",
+      "shortDesc": "Fourniture de grues, reach stackers, chariots, outils marins et aides à la navigation adaptés aux besoins."
+    },
+    "project-technical": {
+      "title": "Support Projet & Technique",
+      "shortDesc": "Gestion de projet, supervision technique et solutions clé en main pour infrastructures portuaires."
+    },
+    "logistics-supply": {
+      "title": "Logistique & Supply Chain",
+      "shortDesc": "Logistique de bout en bout incluant transport, dédouanement, entreposage et optimisation de la chaîne."
+    },
+    "offshore-support": {
+      "title": "Navires Support Offshore",
+      "shortDesc": "Transfert d'équipage, ravitaillement, manutention sous-marine et logistique pour projets offshore."
+    },
+    "trading-agencies": {
+      "title": "Négoce & Agences",
+      "shortDesc": "Représentation de navires, courtage de fret, approvisionnement et coordination fournisseurs."
+    },
+    "consultancies-research": {
+      "title": "Conseil & Études",
+      "shortDesc": "Conseil expert en opérations portuaires, études de marché, faisabilité et stratégie commerciale."
+    }
   },
   "markets": {
-    "subtitle": "Au service des principaux hubs maritimes d'Afrique de l'Est et du Golfe Arabique"
+    "title": "Nos Marchés & Clients",
+    "subtitle": "Opérant en Afrique de l'Est, dans le Golfe et le corridor de la Mer Rouge, Afrihorn dessert les grandes autorités portuaires, marines, gardes-côtes et compagnies ferroviaires avec expertise et présence locale.",
+    "regionsTitle": "Couverture Géographique",
+    "regions": {
+      "east-africa": {
+        "title": "Afrique de l'Est",
+        "description": "Kenya (Mombasa), Tanzanie (Dar es Salaam), Somalie (Mogadiscio, Berbera), Djibouti"
+      },
+      "gulf": {
+        "title": "Golfe Arabique",
+        "description": "EAU (Dubaï, Abu Dhabi), Oman (Mascate, Salalah), Qatar, Bahreïn"
+      },
+      "red-sea": {
+        "title": "Corridor Mer Rouge",
+        "description": "Arabie Saoudite (Jeddah, Port King Abdullah), Soudan (Port-Soudan), Yémen (Aden)"
+      },
+      "indian-ocean": {
+        "title": "Îles Océan Indien",
+        "description": "Seychelles, Maurice, Madagascar, Comores"
+      }
+    },
+    "clientsTitle": "Secteurs Clients Clés",
+    "clients": {
+      "ports": {
+        "title": "Autorités Portuaires",
+        "description": "Terminaux conteneurs, installations vrac, ports polyvalents, ports secs, zones franches"
+      },
+      "navies": {
+        "title": "Forces Navales",
+        "description": "Navires de guerre, patrouilleurs, sous-marins, navires support, bases et chantiers navals"
+      },
+      "coast-guards": {
+        "title": "Gardes-Côtes",
+        "description": "Intercepteurs rapides, patrouilleurs, vedettes de sauvetage, systèmes de surveillance maritime"
+      },
+      "railways": {
+        "title": "Compagnies Ferroviaires",
+        "description": "Locomotives, wagons, équipements de voie, systèmes de signalisation, pièces matériel roulant"
+      }
+    },
+    "portsTitle": "Principaux Ports Desservis",
+    "ports": {
+      "djibouti": "Port de Djibouti",
+      "mombasa": "Port de Mombasa (Kenya)",
+      "dar": "Port de Dar es Salaam (Tanzanie)",
+      "jeddah": "Port Islamique de Jeddah (Arabie)",
+      "aden": "Port d'Aden (Yémen)",
+      "mogadishu": "Port de Mogadiscio (Somalie)",
+      "berbera": "Port de Berbera (Somaliland)",
+      "port-sudan": "Port-Soudan (Soudan)"
+    }
   },
   "contact": {
-    "subtitle": "Parlons de vos besoins maritimes"
+    "title": "Contactez-nous",
+    "intro": "Nous sommes toujours à l'écoute pour améliorer nos produits et services. Contactez-nous et dites-nous comment nous pouvons vous aider.",
+    "name": "Nom complet",
+    "email": "Adresse e-mail",
+    "company": "Entreprise",
+    "message": "Message",
+    "messagePlaceholder": "Saisissez votre message ici",
+    "send": "Envoyer",
+    "sendEmail": "Envoyer par e-mail",
+    "sendWhatsApp": "WhatsApp",
+    "whatsappPrefill": "Bonjour, je souhaite entrer en contact avec Afrihorn.",
+    "coordinates": "Nos coordonnées",
+    "address": "Émirats arabes unis",
+    "emailLabel": "E-mail",
+    "phoneLabel": "Téléphone",
+    "weAreHere": "Nous sommes ici",
+    "sent": "Envoyé",
+    "error": "L'envoi a échoué. Réessayez ou écrivez-nous par email."
   },
   "sections": {
     "1": {
@@ -173,132 +289,6 @@
         "Formation et renforcement des capacités – Ateliers et programmes de formation pour renforcer les compétences des équipes."
       ]
     }
-  },
-  "markets": {
-    "title": "Nos Marchés & Clients",
-    "subtitle": "Opérant en Afrique de l'Est, dans le Golfe et le corridor de la Mer Rouge, Afrihorn dessert les grandes autorités portuaires, marines, gardes-côtes et compagnies ferroviaires avec expertise et présence locale.",
-    "regionsTitle": "Couverture Géographique",
-    "regions": {
-      "east-africa": {
-        "title": "Afrique de l'Est",
-        "description": "Kenya (Mombasa), Tanzanie (Dar es Salaam), Somalie (Mogadiscio, Berbera), Djibouti"
-      },
-      "gulf": {
-        "title": "Golfe Arabique",
-        "description": "EAU (Dubaï, Abu Dhabi), Oman (Mascate, Salalah), Qatar, Bahreïn"
-      },
-      "red-sea": {
-        "title": "Corridor Mer Rouge",
-        "description": "Arabie Saoudite (Jeddah, Port King Abdullah), Soudan (Port-Soudan), Yémen (Aden)"
-      },
-      "indian-ocean": {
-        "title": "Îles Océan Indien",
-        "description": "Seychelles, Maurice, Madagascar, Comores"
-      }
-    },
-    "clientsTitle": "Secteurs Clients Clés",
-    "clients": {
-      "ports": {
-        "title": "Autorités Portuaires",
-        "description": "Terminaux conteneurs, installations vrac, ports polyvalents, ports secs, zones franches"
-      },
-      "navies": {
-        "title": "Forces Navales",
-        "description": "Navires de guerre, patrouilleurs, sous-marins, navires support, bases et chantiers navals"
-      },
-      "coast-guards": {
-        "title": "Gardes-Côtes",
-        "description": "Intercepteurs rapides, patrouilleurs, vedettes de sauvetage, systèmes de surveillance maritime"
-      },
-      "railways": {
-        "title": "Compagnies Ferroviaires",
-        "description": "Locomotives, wagons, équipements de voie, systèmes de signalisation, pièces matériel roulant"
-      }
-    },
-    "portsTitle": "Principaux Ports Desservis",
-    "ports": {
-      "djibouti": "Port de Djibouti",
-      "mombasa": "Port de Mombasa (Kenya)",
-      "dar": "Port de Dar es Salaam (Tanzanie)",
-      "jeddah": "Port Islamique de Jeddah (Arabie)",
-      "aden": "Port d'Aden (Yémen)",
-      "mogadishu": "Port de Mogadiscio (Somalie)",
-      "berbera": "Port de Berbera (Somaliland)",
-      "port-sudan": "Port-Soudan (Soudan)"
-    }
-  },
-  "services": {
-    "title": "Nos Services",
-    "subtitle": "Des solutions innovantes pour l'excellence maritime",
-    "clickForMore": "Cliquez pour plus d'infos",
-    "port-operations": {
-      "title": "Opérations Portuaires",
-      "shortDesc": "Services complets incluant accostage, pilotage, remorquage et manutention pour assurer sécurité et efficacité."
-    },
-    "marine-services": {
-      "title": "Services Maritimes",
-      "shortDesc": "Bunkering, eau douce, réception des déchets, avitaillement et réponse d'urgence pour maintenir les navires opérationnels."
-    },
-    "shipyard-operations": {
-      "title": "Chantier Naval",
-      "shortDesc": "Réparations à flot et en cale sèche, maintenance de routine, nettoyage de coque et réparations structurelles."
-    },
-    "docking-berthing": {
-      "title": "Support Accostage & Mouillage",
-      "shortDesc": "Fourniture et maintenance de défenses, bollards, équipements d'amarrage et systèmes de guidage."
-    },
-    "engineering-fabrication": {
-      "title": "Ingénierie & Fabrication",
-      "shortDesc": "Travaux d'acier marin, tuyauterie, usinage et solutions de rénovation avec matériaux certifiés marine."
-    },
-    "safety-compliance": {
-      "title": "Sécurité, Conformité & Inspection",
-      "shortDesc": "Audits de sécurité, inspections, tests CND et conformité IMO, SOLAS et MARPOL."
-    },
-    "equipment-supply": {
-      "title": "Équipements Portuaires",
-      "shortDesc": "Fourniture de grues, reach stackers, chariots, outils marins et aides à la navigation adaptés aux besoins."
-    },
-    "project-technical": {
-      "title": "Support Projet & Technique",
-      "shortDesc": "Gestion de projet, supervision technique et solutions clé en main pour infrastructures portuaires."
-    },
-    "logistics-supply": {
-      "title": "Logistique & Supply Chain",
-      "shortDesc": "Logistique de bout en bout incluant transport, dédouanement, entreposage et optimisation de la chaîne."
-    },
-    "offshore-support": {
-      "title": "Navires Support Offshore",
-      "shortDesc": "Transfert d'équipage, ravitaillement, manutention sous-marine et logistique pour projets offshore."
-    },
-    "trading-agencies": {
-      "title": "Négoce & Agences",
-      "shortDesc": "Représentation de navires, courtage de fret, approvisionnement et coordination fournisseurs."
-    },
-    "consultancies-research": {
-      "title": "Conseil & Études",
-      "shortDesc": "Conseil expert en opérations portuaires, études de marché, faisabilité et stratégie commerciale."
-    }
-  },
-  "contact": {
-    "title": "Contactez-nous",
-    "intro": "Nous sommes toujours à l'écoute pour améliorer nos produits et services. Contactez-nous et dites-nous comment nous pouvons vous aider.",
-    "name": "Nom complet",
-    "email": "Adresse e-mail",
-    "company": "Entreprise",
-    "message": "Message",
-    "messagePlaceholder": "Saisissez votre message ici",
-    "send": "Envoyer",
-    "sendEmail": "Envoyer par e-mail",
-    "sendWhatsApp": "WhatsApp",
-    "whatsappPrefill": "Bonjour, je souhaite entrer en contact avec Afrihorn.",
-    "coordinates": "Nos coordonnées",
-    "address": "Émirats arabes unis",
-    "emailLabel": "E-mail",
-    "phoneLabel": "Téléphone",
-    "phone": "+971 XX XXX XXXX",
-    "supportEmail": "support@afrihorn.com",
-    "weAreHere": "Nous sommes ici"
   },
   "footer": {
     "copyright": "© klikall. Tous droits réservés."

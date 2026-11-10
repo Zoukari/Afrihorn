@@ -25,7 +25,7 @@ export function SectionVisual() {
           transition={{ duration: 0.6 }}
         >
           <img
-            src="/0.png"
+            src="/0.jpg"
             alt="Afrihorn services - Port operations, Marine services, Shipyard and more"
             className={styles.img}
             loading="lazy"

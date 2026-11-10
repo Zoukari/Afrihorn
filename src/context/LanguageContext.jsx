@@ -14,7 +14,9 @@ export function LanguageProvider({ children }) {
         const stored = localStorage.getItem('afrihorn-lang');
         if (stored === 'en' || stored === 'fr' || stored === 'ar') return stored;
       }
-    } catch (_) {}
+    } catch {
+      // localStorage indisponible (navigation privée) : langue par défaut
+    }
     return 'en';
   });
 
@@ -32,7 +34,9 @@ export function LanguageProvider({ children }) {
     setLang(newLang);
     try {
       localStorage.setItem('afrihorn-lang', newLang);
-    } catch (_) {}
+    } catch {
+      // localStorage indisponible : le choix reste valable pour la session
+    }
   }, []);
 
   const t = useCallback(
@@ -54,6 +58,7 @@ export function LanguageProvider({ children }) {
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useLanguage() {
   const ctx = useContext(LanguageContext);
   if (!ctx) throw new Error('useLanguage must be used within LanguageProvider');

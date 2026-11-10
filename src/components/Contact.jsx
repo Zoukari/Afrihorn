@@ -6,6 +6,7 @@ import { InteractiveHoverButton } from './InteractiveHoverButton';
 import { SectionTitle } from './SectionTitle';
 import styles from './Contact.module.css';
 import lightStyles from './SectionTitleLight.module.css';
+import { SITE, whatsappLink } from '../config/site';
 
 const formItem = {
   hidden: { opacity: 0, y: 20 },
@@ -18,17 +19,37 @@ const formItem = {
 
 export function Contact() {
   const { t } = useLanguage();
-  const [sent, setSent] = useState(false);
-  const [sending, setSending] = useState(false);
+  const [status, setStatus] = useState('idle'); // idle | sending | sent | error
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSending(true);
-    setTimeout(() => {
-      setSending(false);
-      setSent(true);
-    }, 800);
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form));
+
+    // Pas d'endpoint configuré : on ouvre le client mail avec le message pré-rempli.
+    if (!SITE.formEndpoint) {
+      const subject = `Afrihorn — ${data.name}${data.company ? ` (${data.company})` : ''}`;
+      const body = `${data.message}\n\n${data.name}\n${data.email}${data.company ? `\n${data.company}` : ''}`;
+      window.location.href = `mailto:${SITE.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      return;
+    }
+
+    setStatus('sending');
+    try {
+      const res = await fetch(SITE.formEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ ...data, _replyto: data.email, _subject: `Afrihorn — ${data.name}` }),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      form.reset();
+      setStatus('sent');
+    } catch {
+      setStatus('error');
+    }
   };
+
+  const waLink = whatsappLink(t('contact.whatsappPrefill'));
 
   const fields = [
     { name: 'name', type: 'text', label: t('contact.name'), required: true },
@@ -66,11 +87,13 @@ export function Contact() {
           </h2>
           <p className={styles.intro}>{t('contact.intro')}</p>
           <div className={styles.contactLine}>
-            <a href="mailto:contact@afrihorn.com">contact@afrihorn.com</a>
-            <span className={styles.bullet}>•</span>
-            <span>{t('contact.phone')}</span>
-            <span className={styles.bullet}>•</span>
-            <a href={`mailto:${t('contact.supportEmail')}`}>{t('contact.supportEmail')}</a>
+            {[
+              SITE.email && <a key="e" href={`mailto:${SITE.email}`}>{SITE.email}</a>,
+              SITE.phone && <a key="p" href={`tel:${SITE.phone.replace(/\s/g, '')}`}>{SITE.phone}</a>,
+              SITE.supportEmail && <a key="s" href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>,
+            ]
+              .filter(Boolean)
+              .flatMap((el, i) => (i ? [<span key={`b${i}`} className={styles.bullet}>•</span>, el] : [el]))}
           </div>
         </motion.div>
 
@@ -114,20 +137,20 @@ export function Contact() {
             <motion.div className={styles.formActions} variants={formItem}>
               <InteractiveHoverButton
                 type="submit"
-                disabled={sending}
+                disabled={status === 'sending'}
                 className={styles.submitBtn}
               >
-                {sending ? '...' : sent ? '✓ Sent' : t('contact.sendEmail')}
+                {status === 'sending' ? '...' : status === 'sent' ? `✓ ${t('contact.sent')}` : t('contact.sendEmail')}
               </InteractiveHoverButton>
-              <a
-                href={`https://wa.me/971XXXXXXXXX?text=${encodeURIComponent(t('contact.whatsappPrefill') || '')}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.whatsappBtn}
-              >
-                {t('contact.sendWhatsApp')}
-              </a>
+              {waLink && (
+                <a href={waLink} target="_blank" rel="noopener noreferrer" className={styles.whatsappBtn}>
+                  {t('contact.sendWhatsApp')}
+                </a>
+              )}
             </motion.div>
+            {status === 'error' && (
+              <p role="alert" className={styles.formError}>{t('contact.error')}</p>
+            )}
           </motion.form>
         </motion.div>
       </div>
