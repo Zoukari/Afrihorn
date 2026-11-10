@@ -363,5 +363,15 @@
 }
 @media (max-width: 640px) {
   .leftCol { display: none; }
-  .bigNumber { display: none; }
+  /* Le chiffre reste visible sur mobile, au-dessus du texte */
+  .bigNumber {
+    display: block;
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 0 0 -0.6rem;
+    font-size: 4.5rem;
+    opacity: 0.16;
+    transform: none !important;
+  }
 }
