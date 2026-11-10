@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import styles from './Header.module.css';
@@ -11,7 +11,16 @@ function scrollToSection(id) {
 }
 
 export function Header() {
-  const { t } = useLanguage();
+  const { t, lang, setLanguage } = useLanguage();
+  const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef(null);
+
+  useEffect(() => {
+    if (!langOpen) return;
+    const close = (e) => { if (!langRef.current?.contains(e.target)) setLangOpen(false); };
+    document.addEventListener('pointerdown', close);
+    return () => document.removeEventListener('pointerdown', close);
+  }, [langOpen]);
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -73,6 +82,36 @@ export function Header() {
             ))}
           </div>
         </nav>
+
+        <div className={styles.lang} ref={langRef}>
+          <button
+            type="button"
+            className={styles.langBtn}
+            aria-haspopup="listbox"
+            aria-expanded={langOpen}
+            onClick={() => setLangOpen((o) => !o)}
+          >
+            {lang.toUpperCase()}
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+          </button>
+          {langOpen && (
+            <ul className={styles.langMenu} role="listbox">
+              {['en', 'fr', 'ar'].map((l) => (
+                <li key={l}>
+                  <button
+                    type="button"
+                    role="option"
+                    aria-selected={lang === l}
+                    className={lang === l ? styles.langActive : ''}
+                    onClick={() => { setLanguage(l); setLangOpen(false); }}
+                  >
+                    {l === 'en' ? 'English' : l === 'fr' ? 'Français' : 'العربية'}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
 
         {SITE.phone && (
           <a className={styles.call} href={`tel:${SITE.phone.replace(/\s/g, '')}`}>

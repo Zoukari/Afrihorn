@@ -19,6 +19,20 @@ export function Markets() {
 
       <div className={styles.container}>
         <div className={styles.globeCol}>
+          <div className={styles.chips} role="tablist" aria-label={t('markets.regionsTitle')}>
+            {REGIONS.map((r) => (
+              <button
+                key={r.id}
+                type="button"
+                role="tab"
+                aria-selected={active === r.id}
+                className={`${styles.chip} ${active === r.id ? styles.chipActive : ''}`}
+                onClick={() => setActive(r.id)}
+              >
+                {t(`markets.regions.${r.id}.title`)}
+              </button>
+            ))}
+          </div>
           <div className={styles.globeFrame}>
             <span className={styles.cornerTL} aria-hidden="true" />
             <span className={styles.cornerBR} aria-hidden="true" />
@@ -31,9 +45,11 @@ export function Markets() {
             <span className={styles.keyZone} aria-hidden="true" /> {t('markets.regionsTitle')}
             <span className={styles.keyHq} aria-hidden="true" /> {t('markets.hq')}
           </p>
+          <p className={styles.activeDesc}>{t(`markets.regions.${active}.description`)}</p>
         </div>
 
         <div className={styles.side}>
+          <div className={styles.regionBlock}>
           <h3 className={styles.label}>{t('markets.regionsTitle')}</h3>
           <p className={styles.hint}>{t('markets.globeHint')}</p>
           <ul className={styles.regions}>
@@ -52,8 +68,9 @@ export function Markets() {
               </li>
             ))}
           </ul>
+          </div>
 
-          <h3 className={styles.label}>{t('markets.clientsTitle')}</h3>
+          <h3 className={`${styles.label} ${styles.clientsLabel}`}>{t('markets.clientsTitle')}</h3>
           <dl className={styles.clients}>
             {CLIENTS.map((c) => (
               <div key={c} className={styles.client}>

@@ -116,3 +116,64 @@
   .call span { display: none; }
   .call { width: 40px; padding: 0; justify-content: center; }
 }
+
+.lang { position: relative; flex-shrink: 0; }
+.langBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 40px;
+  padding: 0 12px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.langBtn:hover { border-color: #fff; }
+.langMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 140px;
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  background: var(--hull);
+  border: 1px solid var(--steel-2);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+.langMenu button {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  padding: 10px 12px;
+  font: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.langMenu button:hover { background: rgba(255, 255, 255, 0.06); }
+.langMenu .langActive { background: var(--signal); }
+.langMenu .langActive:hover { background: var(--signal); }
+
+/* Boutons arrondis */
+.call { border-radius: 10px; }
+.logoImg { border-radius: 4px; }
+
+@media (max-width: 960px) {
+  .lang { margin-left: auto; }
+  .call { margin-left: 0; }
+  .inner { gap: 10px; }
+}
+@media (max-width: 480px) {
+  .inner { height: 60px; }
+  .logoImg { height: 30px; }
+  .langBtn, .call, .burger { height: 40px; }
+}

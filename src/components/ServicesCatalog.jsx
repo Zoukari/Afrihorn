@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { SectionTitle } from './SectionTitle';
 import styles from './ServicesCatalog.module.css';
@@ -72,6 +72,52 @@ function Detail({ n }) {
   );
 }
 
+function MobileCatalog({ active, setActive }) {
+  const { t } = useLanguage();
+  const barRef = useRef(null);
+
+  useEffect(() => {
+    const bar = barRef.current;
+    const el = bar?.querySelector(`[data-n="${active}"]`);
+    if (bar && el) bar.scrollTo({ left: el.offsetLeft - 16, behavior: 'smooth' });
+  }, [active]);
+
+  const go = (d) => setActive(((active - 1 + d + 12) % 12) + 1);
+
+  return (
+    <div className={styles.mobile}>
+      <div className={styles.tabs} ref={barRef} role="tablist" aria-label={t('services.listLabel')}>
+        {IMAGES.map((_, i) => {
+          const n = i + 1;
+          return (
+            <button
+              key={n}
+              data-n={n}
+              type="button"
+              role="tab"
+              aria-selected={active === n}
+              className={`${styles.tab} ${active === n ? styles.tabActive : ''}`}
+              onClick={() => setActive(n)}
+            >
+              {t(`sections.${n}.title`)}
+            </button>
+          );
+        })}
+      </div>
+      <div className={styles.stepper}>
+        <button type="button" onClick={() => go(-1)} aria-label="Previous">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><path d="M15 6l-6 6 6 6" /></svg>
+        </button>
+        <span>{active} / 12</span>
+        <button type="button" onClick={() => go(1)} aria-label="Next">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
+        </button>
+      </div>
+      <Detail n={active} />
+    </div>
+  );
+}
+
 export function ServicesCatalog() {
   const { t } = useLanguage();
   const narrow = useIsNarrow();
@@ -81,35 +127,36 @@ export function ServicesCatalog() {
     <section id="services" className={styles.section}>
       <SectionTitle subtitle={t('services.subtitle')}>{t('nav.services')}</SectionTitle>
 
-      <div className={styles.container}>
-        <ul className={styles.list} aria-label={t('services.listLabel')}>
-          {IMAGES.map((_, i) => {
-            const n = i + 1;
-            const on = active === n;
-            return (
-              <li key={n}>
-                <button
-                  type="button"
-                  className={`${styles.item} ${on ? styles.itemActive : ''}`}
-                  aria-expanded={on}
-                  onClick={() => setActive(narrow && on ? 0 : n)}
-                  onMouseEnter={() => !narrow && setActive(n)}
-                >
-                  <span>{t(`sections.${n}.title`)}</span>
-                  <svg className={styles.chev} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
-                </button>
-                {narrow && on && <Detail n={n} />}
-              </li>
-            );
-          })}
-        </ul>
+      {narrow ? (
+        <MobileCatalog active={active} setActive={setActive} />
+      ) : (
+        <div className={styles.container}>
+          <ul className={styles.list} aria-label={t('services.listLabel')}>
+            {IMAGES.map((_, i) => {
+              const n = i + 1;
+              const on = active === n;
+              return (
+                <li key={n}>
+                  <button
+                    type="button"
+                    className={`${styles.item} ${on ? styles.itemActive : ''}`}
+                    aria-pressed={on}
+                    onClick={() => setActive(n)}
+                    onMouseEnter={() => setActive(n)}
+                  >
+                    <span>{t(`sections.${n}.title`)}</span>
+                    <svg className={styles.chev} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
 
-        {!narrow && (
           <div className={styles.panel}>
-            <Detail n={active || 1} />
+            <Detail n={active} />
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </section>
   );
 }

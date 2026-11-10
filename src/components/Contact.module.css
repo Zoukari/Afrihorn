@@ -58,6 +58,9 @@
   letter-spacing: 0.02em;
   transition: background 0.15s;
 }
+.whatsapp, .submit { border-radius: 10px; }
+.container { border-radius: 16px; overflow: hidden; }
+.field input, .field textarea { border-radius: 8px 8px 0 0 !important; }
 .whatsapp:hover { background: #188a49; }
 
 .form {
