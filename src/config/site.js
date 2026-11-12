@@ -17,7 +17,7 @@ export const SITE = {
   // Clé d'accès Web3Forms (https://web3forms.com) — les messages arrivent
   // dans la boîte mail liée à la clé. Vide = le formulaire ouvre le client mail
   // du visiteur avec le message pré-rempli.
-  web3formsKey: '',
+  web3formsKey: 'c4774af3-90cb-4c81-a070-51a0ea2a0770',
 };
 
 export const whatsappLink = (text = '') =>
