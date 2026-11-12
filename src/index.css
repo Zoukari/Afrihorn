@@ -23,7 +23,7 @@
   --color-text-light: #ffffff;
   --color-border: var(--concrete-2);
   --color-overlay: rgba(13, 25, 34, 0.6);
-  --h1-size: clamp(2.75rem, 6.5vw, 5.5rem);
+  --h1-size: clamp(2.4rem, 5.6vw, 4.6rem);
   --h2-size: clamp(2.25rem, 4.5vw, 3.5rem);
   --radius-sm: 2px;
   --radius-md: 4px;
