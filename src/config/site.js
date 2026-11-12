@@ -9,7 +9,7 @@ export const SITE = {
   phone: '+971 50 595 5616',
 
   // Email principal (affiché + destinataire du formulaire en mode secours).
-  email: 'contact@afrihorn.com',
+  email: 'info@afrihorn.com',
 
   // Email support affiché. Vide = masqué.
   supportEmail: 'support@afrihorn.com',
