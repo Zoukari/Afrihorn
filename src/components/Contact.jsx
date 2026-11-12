@@ -29,7 +29,7 @@ export function Contact() {
     const data = Object.fromEntries(new FormData(form));
 
     // Pas d'endpoint configuré : on ouvre le client mail avec le message pré-rempli.
-    if (!SITE.formEndpoint) {
+    if (!SITE.web3formsKey) {
       const subject = `Afrihorn — ${data.name}${data.company ? ` (${data.company})` : ''}`;
       const body = `${data.message}\n\n${data.name}\n${data.email}${data.company ? `\n${data.company}` : ''}`;
       window.location.href = `mailto:${SITE.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -38,12 +38,20 @@ export function Contact() {
 
     setStatus('sending');
     try {
-      const res = await fetch(SITE.formEndpoint, {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ ...data, _replyto: data.email, _subject: `Afrihorn — ${data.name}` }),
+        body: JSON.stringify({
+          access_key: SITE.web3formsKey,
+          subject: `Site Afrihorn — ${data.name}${data.company ? ` (${data.company})` : ''}`,
+          from_name: 'Site Afrihorn',
+          replyto: data.email,
+          botcheck: '',
+          ...data,
+        }),
       });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || json.success === false) throw new Error(json.message || `HTTP ${res.status}`);
       form.reset();
       setStatus('sent');
     } catch {

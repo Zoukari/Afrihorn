@@ -14,9 +14,10 @@ export const SITE = {
   // Email support affiché. Vide = masqué.
   supportEmail: 'support@afrihorn.com',
 
-  // Endpoint du formulaire (Formspree : 'https://formspree.io/f/XXXXXXX').
-  // Vide = le formulaire ouvre le client mail du visiteur avec le message pré-rempli.
-  formEndpoint: '',
+  // Clé d'accès Web3Forms (https://web3forms.com) — les messages arrivent
+  // dans la boîte mail liée à la clé. Vide = le formulaire ouvre le client mail
+  // du visiteur avec le message pré-rempli.
+  web3formsKey: '',
 };
 
 export const whatsappLink = (text = '') =>
