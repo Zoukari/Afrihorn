@@ -30,7 +30,7 @@ export function Globe({ active, label }) {
     const s = state.current;
     if (!cv || !s.size) return;
     const ctx = cv.getContext('2d');
-    const dpr = window.devicePixelRatio || 1;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const r = s.size / 2 - 2;
     const proj = geoOrthographic().scale(r).translate([s.size / 2, s.size / 2]).rotate(s.rotation).clipAngle(90);
     const path = geoPath(proj, ctx);
@@ -113,7 +113,8 @@ export function Globe({ active, label }) {
     const s = state.current;
     const resize = () => {
       const size = cv.parentElement.clientWidth;
-      const dpr = window.devicePixelRatio || 1;
+      if (!size || size === s.size) return;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
       s.size = size;
       cv.width = size * dpr; cv.height = size * dpr;
       cv.style.width = `${size}px`; cv.style.height = `${size}px`;
@@ -154,6 +155,7 @@ export function Globe({ active, label }) {
 
   // Rotation à la souris / au doigt
   const onPointerDown = (e) => {
+    if (e.pointerType !== 'mouse') return; // sur écran tactile : le doigt fait défiler la page
     const s = state.current;
     cancelAnimationFrame(s.anim);
     s.drag = { x: e.clientX, y: e.clientY, rot: s.rotation };
@@ -174,7 +176,7 @@ export function Globe({ active, label }) {
       ref={canvasRef}
       role="img"
       aria-label={label}
-      style={{ display: 'block', touchAction: 'pan-y', cursor: 'grab' }}
+      style={{ display: 'block', touchAction: 'auto', cursor: 'grab' }}
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
       onPointerUp={onPointerUp}

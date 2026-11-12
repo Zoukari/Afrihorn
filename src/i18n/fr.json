@@ -139,7 +139,7 @@
       "djibouti": "Port de Djibouti",
       "mombasa": "Port de Mombasa (Kenya)",
       "dar": "Port de Dar es Salaam (Tanzanie)",
-      "jeddah": "Port Islamique de Jeddah (Arabie)",
+      "jeddah": "Port de Jeddah (Arabie)",
       "aden": "Port d'Aden (Yémen)",
       "mogadishu": "Port de Mogadiscio (Somalie)",
       "berbera": "Port de Berbera (Somaliland)",
@@ -309,7 +309,6 @@
   },
   "portsSection": {
     "title": "Principaux ports desservis",
-    "subtitle": "Nos équipes et partenaires sur place",
-    "placeholder": "Coordonnées bientôt disponibles"
+    "subtitle": "Nos équipes et partenaires sur place"
   }
 }

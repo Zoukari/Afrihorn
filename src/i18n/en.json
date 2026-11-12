@@ -139,7 +139,7 @@
       "djibouti": "Port of Djibouti",
       "mombasa": "Mombasa Port (Kenya)",
       "dar": "Dar es Salaam Port (Tanzania)",
-      "jeddah": "Jeddah Islamic Port (KSA)",
+      "jeddah": "Jeddah Port (KSA)",
       "aden": "Port of Aden (Yemen)",
       "mogadishu": "Mogadishu Port (Somalia)",
       "berbera": "Berbera Port (Somaliland)",
@@ -309,7 +309,6 @@
   },
   "portsSection": {
     "title": "Major ports served",
-    "subtitle": "Our teams and partners on the ground",
-    "placeholder": "Contact details coming soon"
+    "subtitle": "Our teams and partners on the ground"
   }
 }

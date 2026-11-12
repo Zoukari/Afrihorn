@@ -17,7 +17,6 @@ export function Ports() {
 
         <div className={styles.grid}>
           {PORTS.map((p) => {
-            const hasDetails = p.address.length > 0 || p.phone || p.email;
             return (
               <article key={p.id} className={styles.port}>
                 <h3 className={styles.name}>Afrihorn – {p.city[lang] || p.city.en}</h3>
@@ -26,7 +25,6 @@ export function Ports() {
                   {p.address.map((line) => <span key={line}>{line}</span>)}
                   {p.phone && <a href={tel(p.phone)}>{p.phone}</a>}
                   {p.email && <a className={styles.email} href={`mailto:${p.email}`}>{p.email}</a>}
-                  {!hasDetails && <span className={styles.soon}>{t('portsSection.placeholder')}</span>}
                 </address>
               </article>
             );
