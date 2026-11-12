@@ -12,7 +12,7 @@ export const SITE = {
   email: 'info@afrihorn.com',
 
   // Email support affiché. Vide = masqué.
-  supportEmail: 'support@afrihorn.com',
+  supportEmail: '',
 
   // Clé d'accès Web3Forms (https://web3forms.com) — les messages arrivent
   // dans la boîte mail liée à la clé. Vide = le formulaire ouvre le client mail
