@@ -12,8 +12,11 @@
     "kicker": "UAE-based supplier for East Africa, the Red Sea and the Gulf",
     "title": "Port, marine and rail equipment, delivered where you operate",
     "call": "Call us",
-    "draftTitle": "Draft marks",
-    "draftText": "The depth scale painted on every ship’s bow. It shows, in metres, how deep the hull sits below the waterline. The ships we supply and support all carry one."
+    "draftTitle": "Marine & Port Services",
+    "draftText": [
+      "We provide a wide range of marine and port services to support vessels, shipping operations and port activities. Our services include vessel assistance, port agency, marine logistics, cargo handling support, ship supplies, crew services and operational coordination.",
+      "With a focus on safety, efficiency and reliability, we help ensure smooth vessel operations and dependable support throughout every port call."
+    ]
   },
   "intro": {
     "title": "About Afrihorn",

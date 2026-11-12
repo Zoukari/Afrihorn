@@ -62,7 +62,9 @@ export function Hero() {
           </ol>
           <figcaption className={styles.caption}>
             <strong>{t('hero.draftTitle')}</strong>
-            {t('hero.draftText')}
+            {[].concat(t('hero.draftText')).map((para) => (
+              <p key={para}>{para}</p>
+            ))}
           </figcaption>
         </motion.figure>
       </div>

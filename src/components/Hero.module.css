@@ -133,7 +133,7 @@
 .scale li:nth-child(odd) { opacity: 0.55; }
 .scale li:last-child { color: var(--signal); border-right-color: var(--signal); }
 .caption {
-  width: 200px;
+  width: 300px;
   padding: 14px 16px;
   background: rgba(13, 25, 34, 0.72);
   backdrop-filter: blur(6px);
@@ -143,6 +143,8 @@
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.8);
 }
+.caption p { margin: 0; }
+.caption p + p { margin-top: 8px; }
 .caption strong {
   display: block;
   margin-bottom: 4px;

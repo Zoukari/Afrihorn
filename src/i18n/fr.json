@@ -12,8 +12,11 @@
     "kicker": "Fournisseur basé aux Émirats pour l’Afrique de l’Est, la mer Rouge et le Golfe",
     "title": "Équipements portuaires, maritimes et ferroviaires, livrés là où vous opérez",
     "call": "Nous appeler",
-    "draftTitle": "Marques de tirant d’eau",
-    "draftText": "L’échelle peinte sur l’étrave de chaque navire. Elle indique, en mètres, la profondeur de la coque sous la ligne de flottaison. Tous les navires que nous équipons en portent une."
+    "draftTitle": "Services maritimes et portuaires",
+    "draftText": [
+      "Nous proposons une large gamme de services maritimes et portuaires pour accompagner les navires, les opérations de transport maritime et les activités portuaires : assistance aux navires, agence portuaire, logistique maritime, appui à la manutention, avitaillement, services aux équipages et coordination opérationnelle.",
+      "Avec la sécurité, l’efficacité et la fiabilité comme priorités, nous assurons le bon déroulement des opérations et un soutien fiable à chaque escale."
+    ]
   },
   "intro": {
     "title": "À propos d'Afrihorn",
